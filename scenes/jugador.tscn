@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://bofke32sctxnq"]
+
+[ext_resource type="Texture2D" uid="uid://ctjkfc27rshxv" path="res://assets/character/muñeco.png" id="1_177mp"]
+
+[node name="Jugador" type="CharacterBody2D"]
+
+[node name="Poligonos" type="Node2D" parent="."]
+
+[node name="piernaIzquierda" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(153.56, 163.669)
+rotation = -1.23921
+offset = Vector2(-43.5118, -97.7179)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(48.9513, 90.4603, 49.1167, 105.179, 3.63862, 105.179, 3.80399, 90.6257)
+uv = PackedVector2Array(48.9513, 90.4603, 49.1167, 105.179, 3.63862, 105.179, 3.80399, 90.6257)
+
+[node name="piernaDerecha" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(160, 163)
+rotation = -1.90946
+scale = Vector2(1, 1)
+offset = Vector2(-112.796, -95.7812)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(74.5844, 89.4681, 74.2536, 102.863, 116.92, 102.533, 116.755, 89.7988)
+uv = PackedVector2Array(74.5844, 89.4681, 74.2536, 102.863, 116.92, 102.533, 116.755, 89.7988)
+
+[node name="torso" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(157, 144)
+offset = Vector2(-62, -76)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(51.1011, 47.2975, 72.7652, 47.2975, 72.5999, 105.179, 51.7626, 105.013)
+uv = PackedVector2Array(51.1011, 47.2975, 72.7652, 47.2975, 72.5999, 105.179, 51.7626, 105.013)
+
+[node name="cabeza" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(157, 109)
+offset = Vector2(-62, -20)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(57.5508, 31.2562, 50.7704, 23.4836, 51.4319, 16.2071, 62.0159, 11.4112, 71.1115, 13.7265, 72.2691, 24.1451, 68.4655, 30.7601, 62.512, 31.7523)
+uv = PackedVector2Array(57.5508, 31.2562, 50.7704, 23.4836, 51.4319, 16.2071, 62.0159, 11.4112, 71.1115, 13.7265, 72.2691, 24.1451, 68.4655, 30.7601, 62.512, 31.7523)
+
+[node name="brazoDerecho" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(166, 125)
+offset = Vector2(-75.9501, -42.2536)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(73.2091, 35.8133, 70.9501, 40.4341, 70.9501, 44.5415, 73.6199, 48.6489, 98.8803, 48.7515, 101.139, 45.5683, 101.139, 39.5099, 97.7508, 35.7106)
+uv = PackedVector2Array(73.2091, 35.8133, 70.9501, 40.4341, 70.9501, 44.5415, 73.6199, 48.6489, 98.8803, 48.7515, 101.139, 45.5683, 101.139, 39.5099, 97.7508, 35.7106)
+
+[node name="antebrazoDerecho" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(186, 124)
+offset = Vector2(-109.95, -34.2536)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(105.675, 10.2536, 105.344, 18.6877, 108.486, 21.1683, 108.155, 25.4681, 103.525, 37.8712, 112.621, 40.5172, 116.259, 35.5559, 116.755, 10.9151)
+uv = PackedVector2Array(105.675, 10.2536, 105.344, 18.6877, 108.486, 21.1683, 108.155, 25.4681, 103.525, 37.8712, 112.621, 40.5172, 116.259, 35.5559, 116.755, 10.9151)
+
+[node name="brazoIzquierdo" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(149, 125)
+offset = Vector2(-46.7575, -42.096)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(48.1244, 35.7213, 23.4836, 36.3828, 21.003, 40.3518, 21.003, 44.4862, 23.4836, 48.1244, 47.959, 48.2898, 50.9358, 44.8169, 50.9358, 38.8634)
+uv = PackedVector2Array(48.1244, 35.7213, 23.4836, 36.3828, 21.003, 40.3518, 21.003, 44.4862, 23.4836, 48.1244, 47.959, 48.2898, 50.9358, 44.8169, 50.9358, 38.8634)
+
+[node name="antebrazoIzquierdo" type="Polygon2D" parent="Poligonos"]
+texture_filter = 1
+position = Vector2(128, 125)
+offset = Vector2(-17.7575, -34.096)
+texture = ExtResource("1_177mp")
+polygon = PackedVector2Array(13.8918, 9.09597, 11.0805, 10.9151, 9.75748, 13.065, 10.0882, 17.5301, 12.3053, 19.4082, 12.769, 23.2337, 11.4359, 23.6974, 11.3779, 33.8989, 13.8123, 39.6951, 22.3908, 37.3187, 22.5068, 33.667, 18.9131, 23.7554, 18.3914, 19.4661, 21.9271, 16.6259, 21.4714, 11.1222)
+uv = PackedVector2Array(13.8918, 9.09597, 11.0805, 10.9151, 9.75748, 13.065, 10.0882, 17.5301, 12.3053, 19.4082, 12.769, 23.2337, 11.4359, 23.6974, 11.3779, 33.8989, 13.8123, 39.6951, 22.3908, 37.3187, 22.5068, 33.667, 18.9131, 23.7554, 18.3914, 19.4661, 21.9271, 16.6259, 21.4714, 11.1222)
