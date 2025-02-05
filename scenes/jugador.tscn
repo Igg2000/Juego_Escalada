@@ -6,10 +6,6 @@
 atlas = ExtResource("1_177mp")
 region = Rect2(52, 48, 20, 57)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5fknv"]
-atlas = ExtResource("1_177mp")
-region = Rect2(53, 13, 18, 18)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_rcjpx"]
 atlas = ExtResource("1_177mp")
 region = Rect2(22, 37, 28, 11)
@@ -34,6 +30,10 @@ region = Rect2(7, 92, 41, 11)
 atlas = ExtResource("1_177mp")
 region = Rect2(75, 91, 41, 11)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fknv"]
+atlas = ExtResource("1_177mp")
+region = Rect2(53, 13, 18, 18)
+
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_7s41x"]
 target_nodepath = NodePath("../IK/manoDerechaIK")
 tip_nodepath = NodePath("cintura/torso/hombroDerecho/codoDerecho/manoDerecha")
@@ -41,12 +41,20 @@ ccdik_data_chain_length = 2
 joint_data/0/bone_index = 7
 joint_data/0/bone2d_node = NodePath("cintura/torso/hombroDerecho/codoDerecho")
 joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -91.2
+joint_data/0/constraint_angle_max = 105.6
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 joint_data/1/bone_index = 6
 joint_data/1/bone2d_node = NodePath("cintura/torso/hombroDerecho")
 joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = 215.467
+joint_data/1/constraint_angle_max = 110.4
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_k6lba"]
@@ -56,12 +64,20 @@ ccdik_data_chain_length = 2
 joint_data/0/bone_index = 4
 joint_data/0/bone2d_node = NodePath("cintura/torso/hombroIzquierdo/codoIzquierdo")
 joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -180.0
+joint_data/0/constraint_angle_max = 360.0
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 joint_data/1/bone_index = 3
 joint_data/1/bone2d_node = NodePath("cintura/torso/hombroIzquierdo")
 joint_data/1/rotate_from_joint = false
-joint_data/1/enable_constraint = false
+joint_data/1/enable_constraint = true
+joint_data/1/constraint_angle_min = -306.0
+joint_data/1/constraint_angle_max = 163.0
+joint_data/1/constraint_angle_invert = true
+joint_data/1/constraint_in_localspace = true
 joint_data/1/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_ga7cg"]
@@ -71,7 +87,11 @@ ccdik_data_chain_length = 1
 joint_data/0/bone_index = 9
 joint_data/0/bone2d_node = NodePath("cintura/piernaIzquierda")
 joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -235.2
+joint_data/0/constraint_angle_max = 297.6
+joint_data/0/constraint_angle_invert = false
+joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_tr1br"]
@@ -81,7 +101,11 @@ ccdik_data_chain_length = 1
 joint_data/0/bone_index = 11
 joint_data/0/bone2d_node = NodePath("cintura/piernaDerecha")
 joint_data/0/rotate_from_joint = false
-joint_data/0/enable_constraint = false
+joint_data/0/enable_constraint = true
+joint_data/0/constraint_angle_min = -129.6
+joint_data/0/constraint_angle_max = 57.6
+joint_data/0/constraint_angle_invert = true
+joint_data/0/constraint_in_localspace = true
 joint_data/0/editor_draw_gizmo = true
 
 [sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_mxd1t"]
@@ -99,9 +123,51 @@ modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 [node name="torso" type="Sprite2D" parent="base"]
 texture_filter = 1
 position = Vector2(314, 294)
-rotation = -0.000396371
+rotation = -0.000400066
 scale = Vector2(1.563, 2)
 texture = SubResource("AtlasTexture_ejecq")
+
+[node name="brazoIzquierdo" type="Sprite2D" parent="base"]
+texture_filter = 1
+position = Vector2(272.565, 250.251)
+rotation = 3.12703
+scale = Vector2(1.99987, 1.99987)
+texture = SubResource("AtlasTexture_rcjpx")
+
+[node name="brazoDerecho" type="Sprite2D" parent="base"]
+texture_filter = 1
+position = Vector2(347.514, 250.3)
+rotation = 0.0258663
+scale = Vector2(1.99944, 1.99944)
+texture = SubResource("AtlasTexture_js2if")
+
+[node name="antebrazoIzquierdo" type="Sprite2D" parent="base"]
+texture_filter = 1
+position = Vector2(251.721, 229.037)
+rotation = 0.0980127
+scale = Vector2(1.99965, 1.99965)
+texture = SubResource("AtlasTexture_yv15t")
+
+[node name="antebrazoDerecho" type="Sprite2D" parent="base"]
+texture_filter = 1
+position = Vector2(368.333, 229.054)
+rotation = -0.0255888
+scale = Vector2(2.00102, 2.00102)
+texture = SubResource("AtlasTexture_ua8co")
+
+[node name="piernaIzquierda" type="Sprite2D" parent="base"]
+texture_filter = 1
+position = Vector2(286.101, 369.796)
+rotation = 2.02767
+scale = Vector2(1.99999, 1.99999)
+texture = SubResource("AtlasTexture_6acsc")
+
+[node name="piernaDerecha" type="Sprite2D" parent="base"]
+texture_filter = 1
+position = Vector2(345.582, 371.03)
+rotation = -2.03342
+scale = Vector2(1.99988, 1.99988)
+texture = SubResource("AtlasTexture_fws31")
 
 [node name="cabeza" type="Sprite2D" parent="base"]
 texture_filter = 1
@@ -109,48 +175,6 @@ position = Vector2(314, 231)
 rotation = -1.57079
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_5fknv")
-
-[node name="brazoIzquierdo" type="Sprite2D" parent="base"]
-texture_filter = 1
-position = Vector2(275.837, 250.945)
-rotation = 3.14031
-scale = Vector2(1.99989, 1.99989)
-texture = SubResource("AtlasTexture_rcjpx")
-
-[node name="brazoDerecho" type="Sprite2D" parent="base"]
-texture_filter = 1
-position = Vector2(350.836, 250.881)
-rotation = -0.00060606
-scale = Vector2(1.9999, 1.9999)
-texture = SubResource("AtlasTexture_js2if")
-
-[node name="antebrazoIzquierdo" type="Sprite2D" parent="base"]
-texture_filter = 1
-position = Vector2(252.941, 229.006)
-rotation = 0.00435269
-scale = Vector2(1.99955, 1.99955)
-texture = SubResource("AtlasTexture_yv15t")
-
-[node name="antebrazoDerecho" type="Sprite2D" parent="base"]
-texture_filter = 1
-position = Vector2(373.152, 228.84)
-rotation = 0.0656398
-scale = Vector2(1.99982, 1.99982)
-texture = SubResource("AtlasTexture_ua8co")
-
-[node name="piernaIzquierda" type="Sprite2D" parent="base"]
-texture_filter = 1
-position = Vector2(286.101, 369.796)
-rotation = 2.02767
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_6acsc")
-
-[node name="piernaDerecha" type="Sprite2D" parent="base"]
-texture_filter = 1
-position = Vector2(344.091, 369.389)
-rotation = -2.07193
-scale = Vector2(2, 2)
-texture = SubResource("AtlasTexture_fws31")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 modification_stack = SubResource("SkeletonModificationStack2D_mxd1t")
@@ -183,6 +207,9 @@ position = Vector2(20.0508, -17.1016)
 rotation = -1.80304
 scale = Vector2(0.999955, 0.999955)
 rest = Transform2D(-0.000787751, -0.999965, 0.999965, -0.000787751, 20.0368, -17.0736)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = -0.0431939
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo"]
@@ -195,6 +222,9 @@ position = Vector2(42.0033, -0.00698853)
 rotation = 0.250563
 scale = Vector2(0.999968, 0.999968)
 rest = Transform2D(-0.00295729, 0.999963, -0.999963, -0.00295729, 42.0019, -0.0055542)
+auto_calculate_length_and_angle = false
+length = 13.988
+bone_angle = -3.36746
 metadata/_local_pose_override_enabled_ = true
 
 [node name="manoIzquierda" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo/codoIzquierdo"]
@@ -212,6 +242,9 @@ position = Vector2(20.0508, 21.8984)
 rotation = -0.00255895
 scale = Vector2(0.99997, 0.99997)
 rest = Transform2D(0.999968, -0.00259201, 0.00259201, 0.999968, 20.0368, 21.9264)
+auto_calculate_length_and_angle = false
+length = 20.0
+bone_angle = 88.519
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/hombroDerecho"]
@@ -226,7 +259,7 @@ rotation = 0.0660754
 scale = Vector2(1.00001, 1.00001)
 rest = Transform2D(0.997848, 0.0653625, -0.0653625, 0.997848, 0.99411, 38.0078)
 auto_calculate_length_and_angle = false
-length = 8.623
+length = 14.415
 bone_angle = 1.73468
 metadata/_local_pose_override_enabled_ = true
 
@@ -245,6 +278,9 @@ position = Vector2(-8.00003, -13)
 rotation = -2.7163
 scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.910918, -0.412584, 0.412584, -0.910918, -8.00003, -13)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = 4.76658
 metadata/_local_pose_override_enabled_ = true
 
 [node name="pieIzquierdo" type="Bone2D" parent="Skeleton2D/cintura/piernaIzquierda"]
@@ -262,12 +298,14 @@ position = Vector2(-9.10159, 13)
 rotation = -0.734986
 scale = Vector2(1, 1)
 rest = Transform2D(0.742044, -0.670351, 0.670351, 0.742044, -9.07355, 13)
+auto_calculate_length_and_angle = false
+length = 16.0
+bone_angle = -167.851
 metadata/_local_pose_override_enabled_ = true
 
 [node name="pieDerecho" type="Bone2D" parent="Skeleton2D/cintura/piernaDerecha"]
 position = Vector2(-60.5956, -13.045)
 rotation = -3.06578
-scale = Vector2(1, 1)
 rest = Transform2D(-0.997127, -0.0757416, 0.0757416, -0.997127, -60.5956, -13.045)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/piernaDerecha"]
@@ -279,7 +317,7 @@ remote_path = NodePath("../../../../base/piernaDerecha")
 [node name="IK" type="Node2D" parent="."]
 
 [node name="manoDerechaIK" type="Node2D" parent="IK"]
-position = Vector2(376, 216)
+position = Vector2(370, 216)
 
 [node name="manoIzquierdaIK" type="Node2D" parent="IK"]
 position = Vector2(252, 216)
