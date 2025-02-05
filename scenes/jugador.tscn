@@ -5,70 +5,132 @@
 [node name="Jugador" type="CharacterBody2D"]
 
 [node name="Poligonos" type="Node2D" parent="."]
+scale = Vector2(2, 2)
 
 [node name="piernaIzquierda" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
-position = Vector2(153.56, 163.669)
+position = Vector2(151, 170.5)
 rotation = -1.23921
 offset = Vector2(-43.5118, -97.7179)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(48.9513, 90.4603, 49.1167, 105.179, 3.63862, 105.179, 3.80399, 90.6257)
 uv = PackedVector2Array(48.9513, 90.4603, 49.1167, 105.179, 3.63862, 105.179, 3.80399, 90.6257)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(1, 1, 1, 1), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="piernaDerecha" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
-position = Vector2(160, 163)
+position = Vector2(164.26, 171.121)
 rotation = -1.90946
-scale = Vector2(1, 1)
-offset = Vector2(-112.796, -95.7812)
+offset = Vector2(-109.472, -97.2546)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(74.5844, 89.4681, 74.2536, 102.863, 116.92, 102.533, 116.755, 89.7988)
 uv = PackedVector2Array(74.5844, 89.4681, 74.2536, 102.863, 116.92, 102.533, 116.755, 89.7988)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(1, 1, 1, 1)]
 
 [node name="torso" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
 position = Vector2(157, 144)
 offset = Vector2(-62, -76)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(51.1011, 47.2975, 72.7652, 47.2975, 72.5999, 105.179, 51.7626, 105.013)
 uv = PackedVector2Array(51.1011, 47.2975, 72.7652, 47.2975, 72.5999, 105.179, 51.7626, 105.013)
+bones = ["cintura", PackedFloat32Array(1, 1, 1, 1), "cintura/torso", PackedFloat32Array(1, 1, 1, 1), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0)]
 
 [node name="cabeza" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
 position = Vector2(157, 109)
 offset = Vector2(-62, -20)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(57.5508, 31.2562, 50.7704, 23.4836, 51.4319, 16.2071, 62.0159, 11.4112, 71.1115, 13.7265, 72.2691, 24.1451, 68.4655, 30.7601, 62.512, 31.7523)
 uv = PackedVector2Array(57.5508, 31.2562, 50.7704, 23.4836, 51.4319, 16.2071, 62.0159, 11.4112, 71.1115, 13.7265, 72.2691, 24.1451, 68.4655, 30.7601, 62.512, 31.7523)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="brazoDerecho" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
 position = Vector2(166, 125)
 offset = Vector2(-75.9501, -42.2536)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(73.2091, 35.8133, 70.9501, 40.4341, 70.9501, 44.5415, 73.6199, 48.6489, 98.8803, 48.7515, 101.139, 45.5683, 101.139, 39.5099, 97.7508, 35.7106)
 uv = PackedVector2Array(73.2091, 35.8133, 70.9501, 40.4341, 70.9501, 44.5415, 73.6199, 48.6489, 98.8803, 48.7515, 101.139, 45.5683, 101.139, 39.5099, 97.7508, 35.7106)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="antebrazoDerecho" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
 position = Vector2(186, 124)
 offset = Vector2(-109.95, -34.2536)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(105.675, 10.2536, 105.344, 18.6877, 108.486, 21.1683, 108.155, 25.4681, 103.525, 37.8712, 112.621, 40.5172, 116.259, 35.5559, 116.755, 10.9151)
 uv = PackedVector2Array(105.675, 10.2536, 105.344, 18.6877, 108.486, 21.1683, 108.155, 25.4681, 103.525, 37.8712, 112.621, 40.5172, 116.259, 35.5559, 116.755, 10.9151)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="brazoIzquierdo" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
 position = Vector2(149, 125)
 offset = Vector2(-46.7575, -42.096)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(48.1244, 35.7213, 23.4836, 36.3828, 21.003, 40.3518, 21.003, 44.4862, 23.4836, 48.1244, 47.959, 48.2898, 50.9358, 44.8169, 50.9358, 38.8634)
 uv = PackedVector2Array(48.1244, 35.7213, 23.4836, 36.3828, 21.003, 40.3518, 21.003, 44.4862, 23.4836, 48.1244, 47.959, 48.2898, 50.9358, 44.8169, 50.9358, 38.8634)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="antebrazoIzquierdo" type="Polygon2D" parent="Poligonos"]
 texture_filter = 1
 position = Vector2(128, 125)
 offset = Vector2(-17.7575, -34.096)
 texture = ExtResource("1_177mp")
+skeleton = NodePath("../../Skeleton2D")
 polygon = PackedVector2Array(13.8918, 9.09597, 11.0805, 10.9151, 9.75748, 13.065, 10.0882, 17.5301, 12.3053, 19.4082, 12.769, 23.2337, 11.4359, 23.6974, 11.3779, 33.8989, 13.8123, 39.6951, 22.3908, 37.3187, 22.5068, 33.667, 18.9131, 23.7554, 18.3914, 19.4661, 21.9271, 16.6259, 21.4714, 11.1222)
 uv = PackedVector2Array(13.8918, 9.09597, 11.0805, 10.9151, 9.75748, 13.065, 10.0882, 17.5301, 12.3053, 19.4082, 12.769, 23.2337, 11.4359, 23.6974, 11.3779, 33.8989, 13.8123, 39.6951, 22.3908, 37.3187, 22.5068, 33.667, 18.9131, 23.7554, 18.3914, 19.4661, 21.9271, 16.6259, 21.4714, 11.1222)
+bones = ["cintura", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/cabeza", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroIzquierdo/codoIzquierdo", PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), "cintura/torso/hombroDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/torso/hombroDerecho/codoDerecho", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaIzquierda", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "cintura/piernaDerecha", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+
+[node name="cintura" type="Bone2D" parent="Skeleton2D"]
+position = Vector2(315, 333)
+rotation = -1.57079
+rest = Transform2D(2.22127e-06, -1, 1, 2.22127e-06, 315, 333)
+
+[node name="torso" type="Bone2D" parent="Skeleton2D/cintura"]
+position = Vector2(63, -2.00014)
+rest = Transform2D(1, 0, 0, 1, 63, -2.00014)
+
+[node name="cabeza" type="Bone2D" parent="Skeleton2D/cintura/torso"]
+position = Vector2(39, 0.999913)
+rest = Transform2D(1, 0, 0, 1, 39, 0.999913)
+
+[node name="hombroIzquierdo" type="Bone2D" parent="Skeleton2D/cintura/torso"]
+position = Vector2(20, -17)
+rotation = -1.57079
+rest = Transform2D(2.22127e-06, -1, 1, 2.22127e-06, 20, -17)
+
+[node name="codoIzquierdo" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo"]
+position = Vector2(42, -0.000186294)
+rotation = 1.57079
+rest = Transform2D(2.22127e-06, 1, -1, 2.22127e-06, 42, -0.000186294)
+
+[node name="hombroDerecho" type="Bone2D" parent="Skeleton2D/cintura/torso"]
+position = Vector2(20, 22)
+rest = Transform2D(1, 0, 0, 1, 20, 22)
+
+[node name="codoDerecho" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroDerecho"]
+position = Vector2(1.00008, 38)
+rest = Transform2D(1, 0, 0, 1, 1.00008, 38)
+
+[node name="piernaIzquierda" type="Bone2D" parent="Skeleton2D/cintura"]
+position = Vector2(-8.00003, -13)
+rotation = -2.87979
+scale = Vector2(1, 1)
+rest = Transform2D(-0.965925, -0.258823, 0.258823, -0.965925, -8.00003, -13)
+
+[node name="piernaDerecha" type="Bone2D" parent="Skeleton2D/cintura"]
+position = Vector2(-8.99997, 13)
+rotation = -0.523598
+rest = Transform2D(0.866026, -0.499999, 0.499999, 0.866026, -8.99997, 13)
+
+[node name="IK" type="Node2D" parent="."]
