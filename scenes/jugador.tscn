@@ -1,8 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=22 format=3 uid="uid://bofke32sctxnq"]
 
+[ext_resource type="Texture2D" uid="uid://cdr4qiff2xyyl" path="res://assets/character/antebrazoDC.png" id="1_6bwjl"]
 [ext_resource type="Texture2D" uid="uid://ctjkfc27rshxv" path="res://assets/character/muñeco.png" id="1_177mp"]
 [ext_resource type="Script" path="res://scripts/mano_derecha_ik.gd" id="2_2j5uy"]
+[ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="2_fa22g"]
+[ext_resource type="Texture2D" uid="uid://b2ac7xhvx30ah" path="res://assets/character/brazoD.png" id="3_5343f"]
 [ext_resource type="Script" path="res://scripts/mano_izquierda_ik.gd" id="3_swlmf"]
+[ext_resource type="Texture2D" uid="uid://v5yc8wfd0tcn" path="res://assets/character/brazoI.png" id="4_l3mph"]
+[ext_resource type="Texture2D" uid="uid://dpn2spm04r5pg" path="res://assets/character/posNormal.png" id="5_28xov"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejecq"]
 atlas = ExtResource("1_177mp")
@@ -122,58 +127,93 @@ modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 
 [node name="base" type="Node2D" parent="."]
 
+[node name="AntebrazoDc" type="Sprite2D" parent="base"]
+position = Vector2(398, 216)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_6bwjl")
+
+[node name="AntebrazoIc" type="Sprite2D" parent="base"]
+position = Vector2(231, 209)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_fa22g")
+
+[node name="BrazoD" type="Sprite2D" parent="base"]
+position = Vector2(364, 252)
+rotation = 1.57079
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_5343f")
+
+[node name="BrazoI" type="Sprite2D" parent="base"]
+position = Vector2(268, 246)
+rotation = -1.57079
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_l3mph")
+
+[node name="TorsoNormal" type="Sprite2D" parent="base"]
+position = Vector2(310, 305)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_28xov")
+
 [node name="torso" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(314, 294)
+position = Vector2(314, 282)
 rotation = -0.000400066
 scale = Vector2(1.563, 2)
 texture = SubResource("AtlasTexture_ejecq")
 
 [node name="brazoIzquierdo" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(275.597, 250.863)
-rotation = 3.13828
-scale = Vector2(1.99967, 1.99967)
+position = Vector2(275.012, 244.115)
+rotation = 2.84063
+scale = Vector2(1.99973, 1.99973)
 texture = SubResource("AtlasTexture_rcjpx")
 
 [node name="brazoDerecho" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(350.588, 250.805)
-rotation = 0.00225258
-scale = Vector2(1.99975, 1.99975)
+position = Vector2(347.657, 243.26)
+rotation = 0.326248
+scale = Vector2(1.9997, 1.9997)
 texture = SubResource("AtlasTexture_js2if")
 
 [node name="antebrazoIzquierdo" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(252.848, 229.01)
-rotation = 0.0115047
-scale = Vector2(1.99923, 1.99923)
+position = Vector2(252.966, 229.009)
+rotation = 0.00244308
+scale = Vector2(2.00042, 2.00042)
 texture = SubResource("AtlasTexture_yv15t")
 
 [node name="antebrazoDerecho" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(369.471, 229.14)
-rotation = -0.112427
-scale = Vector2(1.99964, 1.99964)
+position = Vector2(368.229, 229.023)
+rotation = -0.0174494
+scale = Vector2(1.99855, 1.99855)
 texture = SubResource("AtlasTexture_ua8co")
 
 [node name="piernaIzquierda" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(286.101, 369.796)
-rotation = 2.02767
+position = Vector2(290.164, 342.87)
+rotation = 1.87571
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_6acsc")
 
 [node name="piernaDerecha" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(344.163, 369.59)
-rotation = -2.07459
+position = Vector2(339.241, 344.244)
+rotation = -1.85838
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_fws31")
 
 [node name="cabeza" type="Sprite2D" parent="base"]
+visible = false
 texture_filter = 1
-position = Vector2(314, 231)
+position = Vector2(314, 226)
 rotation = -1.57079
 scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_5fknv")
@@ -182,12 +222,12 @@ texture = SubResource("AtlasTexture_5fknv")
 modification_stack = SubResource("SkeletonModificationStack2D_mxd1t")
 
 [node name="cintura" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(315, 333)
+position = Vector2(315, 304)
 rotation = -1.57079
 rest = Transform2D(6.27438e-06, -1, 1, 6.27438e-06, 315, 333)
 
 [node name="torso" type="Bone2D" parent="Skeleton2D/cintura"]
-position = Vector2(63, -2.00014)
+position = Vector2(46, -2.00028)
 rest = Transform2D(1, 0, 0, 1, 63, -2.00014)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso"]
@@ -197,7 +237,7 @@ scale = Vector2(1.563, 2)
 remote_path = NodePath("../../../../base/torso")
 
 [node name="cabeza" type="Bone2D" parent="Skeleton2D/cintura/torso"]
-position = Vector2(39, 0.999913)
+position = Vector2(32, 0.999804)
 rest = Transform2D(1, 0, 0, 1, 39, 0.999913)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/cabeza"]
@@ -205,9 +245,9 @@ scale = Vector2(2, 2)
 remote_path = NodePath("../../../../../base/cabeza")
 
 [node name="hombroIzquierdo" type="Bone2D" parent="Skeleton2D/cintura/torso"]
-position = Vector2(20.0508, -17.1016)
-rotation = -1.80304
-scale = Vector2(0.999955, 0.999955)
+position = Vector2(20.6652, -19.1861)
+rotation = -1.8695
+scale = Vector2(0.999865, 0.999865)
 rest = Transform2D(-0.000787751, -0.999965, 0.999965, -0.000787751, 20.0368, -17.0736)
 auto_calculate_length_and_angle = false
 length = 20.0
@@ -220,9 +260,9 @@ scale = Vector2(2, 2)
 remote_path = NodePath("../../../../../base/brazoIzquierdo")
 
 [node name="codoIzquierdo" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo"]
-position = Vector2(42.0033, -0.00698853)
-rotation = 0.250563
-scale = Vector2(0.999968, 0.999968)
+position = Vector2(41.8934, -0.366348)
+rotation = 1.70716
+scale = Vector2(1.0003, 1.0003)
 rest = Transform2D(-0.00295729, 0.999963, -0.999963, -0.00295729, 42.0019, -0.0055542)
 auto_calculate_length_and_angle = false
 length = 13.988
@@ -240,9 +280,9 @@ scale = Vector2(2, 2)
 remote_path = NodePath("../../../../../../base/antebrazoIzquierdo")
 
 [node name="hombroDerecho" type="Bone2D" parent="Skeleton2D/cintura/torso"]
-position = Vector2(20.0508, 21.8984)
-rotation = -0.00255895
-scale = Vector2(0.99997, 0.99997)
+position = Vector2(20.685, 19.8139)
+rotation = 0.322322
+scale = Vector2(0.999844, 0.999844)
 rest = Transform2D(0.999968, -0.00259201, 0.00259201, 0.999968, 20.0368, 21.9264)
 auto_calculate_length_and_angle = false
 length = 20.0
@@ -256,9 +296,9 @@ scale = Vector2(2, 2)
 remote_path = NodePath("../../../../../base/brazoDerecho")
 
 [node name="codoDerecho" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroDerecho"]
-position = Vector2(0.982803, 38.0128)
-rotation = 0.0660754
-scale = Vector2(1.00001, 1.00001)
+position = Vector2(0.572464, 38.5933)
+rotation = -0.278708
+scale = Vector2(0.999425, 0.999425)
 rest = Transform2D(0.997848, 0.0653625, -0.0653625, 0.997848, 0.99411, 38.0078)
 auto_calculate_length_and_angle = false
 length = 14.415
