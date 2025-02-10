@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=17 format=3 uid="uid://bofke32sctxnq"]
 
 [ext_resource type="Texture2D" uid="uid://ctjkfc27rshxv" path="res://assets/character/muñeco.png" id="1_177mp"]
+[ext_resource type="Script" path="res://scripts/mano_derecha_ik.gd" id="2_2j5uy"]
+[ext_resource type="Script" path="res://scripts/mano_izquierda_ik.gd" id="3_swlmf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ejecq"]
 atlas = ExtResource("1_177mp")
@@ -129,44 +131,44 @@ texture = SubResource("AtlasTexture_ejecq")
 
 [node name="brazoIzquierdo" type="Sprite2D" parent="base"]
 texture_filter = 1
-position = Vector2(272.565, 250.251)
-rotation = 3.12703
-scale = Vector2(1.99987, 1.99987)
+position = Vector2(275.597, 250.863)
+rotation = 3.13828
+scale = Vector2(1.99967, 1.99967)
 texture = SubResource("AtlasTexture_rcjpx")
 
 [node name="brazoDerecho" type="Sprite2D" parent="base"]
 texture_filter = 1
-position = Vector2(347.514, 250.3)
-rotation = 0.0258663
-scale = Vector2(1.99944, 1.99944)
+position = Vector2(350.588, 250.805)
+rotation = 0.00225258
+scale = Vector2(1.99975, 1.99975)
 texture = SubResource("AtlasTexture_js2if")
 
 [node name="antebrazoIzquierdo" type="Sprite2D" parent="base"]
 texture_filter = 1
-position = Vector2(251.721, 229.037)
-rotation = 0.0980127
-scale = Vector2(1.99965, 1.99965)
+position = Vector2(252.848, 229.01)
+rotation = 0.0115047
+scale = Vector2(1.99923, 1.99923)
 texture = SubResource("AtlasTexture_yv15t")
 
 [node name="antebrazoDerecho" type="Sprite2D" parent="base"]
 texture_filter = 1
-position = Vector2(368.333, 229.054)
-rotation = -0.0255888
-scale = Vector2(2.00102, 2.00102)
+position = Vector2(369.471, 229.14)
+rotation = -0.112427
+scale = Vector2(1.99964, 1.99964)
 texture = SubResource("AtlasTexture_ua8co")
 
 [node name="piernaIzquierda" type="Sprite2D" parent="base"]
 texture_filter = 1
 position = Vector2(286.101, 369.796)
 rotation = 2.02767
-scale = Vector2(1.99999, 1.99999)
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_6acsc")
 
 [node name="piernaDerecha" type="Sprite2D" parent="base"]
 texture_filter = 1
-position = Vector2(345.582, 371.03)
-rotation = -2.03342
-scale = Vector2(1.99988, 1.99988)
+position = Vector2(344.163, 369.59)
+rotation = -2.07459
+scale = Vector2(2, 2)
 texture = SubResource("AtlasTexture_fws31")
 
 [node name="cabeza" type="Sprite2D" parent="base"]
@@ -318,9 +320,11 @@ remote_path = NodePath("../../../../base/piernaDerecha")
 
 [node name="manoDerechaIK" type="Node2D" parent="IK"]
 position = Vector2(370, 216)
+script = ExtResource("2_2j5uy")
 
 [node name="manoIzquierdaIK" type="Node2D" parent="IK"]
 position = Vector2(252, 216)
+script = ExtResource("3_swlmf")
 
 [node name="pieIzquierdoIK" type="Node2D" parent="IK"]
 position = Vector2(268, 402)
