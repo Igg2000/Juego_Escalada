@@ -95,27 +95,27 @@ modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base"]
-position = Vector2(396, 217)
-rotation = 0.0436234
-scale = Vector2(0.399709, 0.399709)
+position = Vector2(386.084, 206.017)
+rotation = 0.0402695
+scale = Vector2(0.349744, 0.349744)
 texture = ExtResource("1_6bwjl")
 
 [node name="AntebrazoIc" type="Sprite2D" parent="base"]
-position = Vector2(233, 210.001)
-rotation = 0.00353061
-scale = Vector2(0.400085, 0.400085)
+position = Vector2(242.884, 201.007)
+rotation = 0.00930883
+scale = Vector2(0.350082, 0.350082)
 texture = ExtResource("2_fa22g")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(363, 248)
-rotation = 1.63132
-scale = Vector2(0.399938, 0.399938)
+position = Vector2(357.258, 243.831)
+rotation = 1.49704
+scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(267, 244.002)
-rotation = -1.60772
-scale = Vector2(0.399947, 0.399947)
+position = Vector2(272.19, 240.346)
+rotation = -1.50383
+scale = Vector2(0.349961, 0.349961)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
@@ -150,23 +150,23 @@ rest = Transform2D(1, 0, 0, 1, 32, 0.999804)
 position = Vector2(14.9998, -25.0001)
 rotation = -1.8695
 scale = Vector2(0.999865, 0.999865)
-rest = Transform2D(-0.294242, -0.95559, 0.95559, -0.294242, 14.9998, -25.0001)
+rest = Transform2D(-0.193511, -0.980961, 0.980961, -0.193511, 14.9998, -25.0001)
 auto_calculate_length_and_angle = false
 length = 20.0
 bone_angle = -0.0431939
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo"]
-position = Vector2(20.3672, 5.22477)
+position = Vector2(14.9993, 5.66499)
 rotation = 1.83259
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.35, 0.35)
 remote_path = NodePath("../../../../../base/BrazoI")
 
 [node name="codoIzquierdo" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo"]
-position = Vector2(59.044, 8.76195)
+position = Vector2(47.6467, 8.39208)
 rotation = 1.87301
 scale = Vector2(1.00032, 1.00032)
-rest = Transform2D(-0.29773, 0.954981, -0.954981, -0.29773, 59.044, 8.76195)
+rest = Transform2D(-0.2027, 0.979568, -0.979568, -0.2027, 47.6467, 8.392)
 auto_calculate_length_and_angle = false
 length = 13.988
 bone_angle = -3.36746
@@ -177,32 +177,32 @@ position = Vector2(62.9952, 1.77802)
 rest = Transform2D(1, 0, 0, 1, 62.9952, 1.77802)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/hombroIzquierdo/codoIzquierdo"]
-position = Vector2(42.0062, 3.85153)
+position = Vector2(43.0023, 2.84825)
 rotation = 1.5708
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.35, 0.35)
 remote_path = NodePath("../../../../../../base/AntebrazoIc")
 
 [node name="hombroDerecho" type="Bone2D" parent="Skeleton2D/cintura/torso"]
 position = Vector2(15.0002, 27.9999)
 rotation = 0.322322
 scale = Vector2(0.999844, 0.999844)
-rest = Transform2D(0.948354, 0.31672, -0.31672, 0.948354, 15.0002, 27.9999)
+rest = Transform2D(0.98222, 0.186901, -0.186901, 0.98222, 15.0002, 27.9999)
 auto_calculate_length_and_angle = false
 length = 20.0
 bone_angle = 88.519
 metadata/_local_pose_override_enabled_ = true
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/hombroDerecho"]
-position = Vector2(2.22691, 22.4544)
+position = Vector2(2.22325, 16.1289)
 rotation = 2.87979
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.35, 0.35)
 remote_path = NodePath("../../../../../base/BrazoD")
 
 [node name="codoDerecho" type="Bone2D" parent="Skeleton2D/cintura/torso/hombroDerecho"]
-position = Vector2(12.369, 59.1367)
+position = Vector2(11.7316, 50.9138)
 rotation = -0.278709
 scale = Vector2(0.999425, 0.999425)
-rest = Transform2D(0.960859, -0.274955, 0.274955, 0.960859, 12.369, 59.1367)
+rest = Transform2D(0.988533, -0.147155, 0.147155, 0.988533, 11.7317, 50.9138)
 auto_calculate_length_and_angle = false
 length = 14.415
 bone_angle = 1.73468
@@ -213,16 +213,16 @@ position = Vector2(59.8995, -4.61787)
 rest = Transform2D(1, 0, 0, 1, 59.8995, -4.61787)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/torso/hombroDerecho/codoDerecho"]
-position = Vector2(32.7745, -6.439)
+position = Vector2(34.6868, -8.52577)
 rotation = 1.5708
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.35, 0.35)
 remote_path = NodePath("../../../../../../base/AntebrazoDc")
 
 [node name="piernaIzquierda" type="Bone2D" parent="Skeleton2D/cintura"]
 position = Vector2(-20.0002, -29.9999)
 rotation = -2.7163
 scale = Vector2(0.999999, 0.999999)
-rest = Transform2D(-0.910917, -0.412587, 0.412587, -0.910917, -20.0002, -29.9999)
+rest = Transform2D(-0.910917, -0.412588, 0.412588, -0.910917, -20.0002, -29.9999)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = 4.76658
@@ -232,16 +232,11 @@ metadata/_local_pose_override_enabled_ = true
 position = Vector2(31.7266, -22.055)
 rest = Transform2D(1, 0, 0, 1, 31.7266, -22.055)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/piernaIzquierda"]
-position = Vector2(5.72205e-06, 1.14441e-05)
-rotation = 0.0315823
-scale = Vector2(2, 2)
-
 [node name="piernaDerecha" type="Bone2D" parent="Skeleton2D/cintura"]
 position = Vector2(-21.9998, 27.0001)
 rotation = -0.734986
 scale = Vector2(1, 1)
-rest = Transform2D(0.74184, -0.670577, 0.670577, 0.74184, -21.9998, 27.0001)
+rest = Transform2D(0.741846, -0.67057, 0.67057, 0.741846, -22.0052, 27.0001)
 auto_calculate_length_and_angle = false
 length = 16.0
 bone_angle = -167.851
@@ -252,19 +247,14 @@ position = Vector2(-26.1784, -27.7073)
 rotation = 0.392878
 rest = Transform2D(0.923811, 0.382849, -0.382849, 0.923811, -26.1784, -27.7073)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton2D/cintura/piernaDerecha"]
-position = Vector2(5.72205e-06, -9.05991e-06)
-rotation = 0.234545
-scale = Vector2(2, 2)
-
 [node name="IK" type="Node2D" parent="."]
 
 [node name="manoDerechaIK" type="Node2D" parent="IK"]
-position = Vector2(399, 190)
+position = Vector2(391, 181)
 script = ExtResource("2_2j5uy")
 
 [node name="manoIzquierdaIK" type="Node2D" parent="IK"]
-position = Vector2(231, 189)
+position = Vector2(242, 181)
 script = ExtResource("3_swlmf")
 
 [node name="pieIzquierdoIK" type="Node2D" parent="IK"]
