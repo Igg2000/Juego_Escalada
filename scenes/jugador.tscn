@@ -96,14 +96,14 @@ modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base"]
 position = Vector2(386.084, 206.017)
-rotation = 0.0402695
+rotation = 0.0402705
 scale = Vector2(0.349744, 0.349744)
 texture = ExtResource("1_6bwjl")
 
 [node name="AntebrazoIc" type="Sprite2D" parent="base"]
-position = Vector2(242.884, 201.007)
-rotation = 0.00930883
-scale = Vector2(0.350082, 0.350082)
+position = Vector2(242.885, 201.006)
+rotation = 0.00929238
+scale = Vector2(0.350065, 0.350065)
 texture = ExtResource("2_fa22g")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
@@ -113,9 +113,9 @@ scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(272.19, 240.346)
-rotation = -1.50383
-scale = Vector2(0.349961, 0.349961)
+position = Vector2(272.19, 240.345)
+rotation = -1.50376
+scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
