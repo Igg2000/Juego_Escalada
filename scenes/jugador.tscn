@@ -96,26 +96,26 @@ position = Vector2(1, 2)
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base"]
-position = Vector2(73.0606, -52.5256)
-rotation = 0.0403002
+position = Vector2(73.0614, -52.5255)
+rotation = 0.0402698
 scale = Vector2(0.349744, 0.349744)
 texture = ExtResource("1_6bwjl")
 
 [node name="AntebrazoIc" type="Sprite2D" parent="base"]
-position = Vector2(-70.1367, -57.536)
-rotation = 0.0092312
-scale = Vector2(0.350074, 0.350074)
+position = Vector2(-70.1379, -57.5364)
+rotation = 0.00929285
+scale = Vector2(0.350065, 0.350065)
 texture = ExtResource("2_fa22g")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2348, -14.7085)
-rotation = 1.49696
+position = Vector2(44.2351, -14.7114)
+rotation = 1.49703
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8304, -18.1724)
-rotation = -1.50325
+position = Vector2(-40.8325, -18.1968)
+rotation = -1.50376
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
