@@ -91,35 +91,36 @@ modifications/2 = SubResource("SkeletonModification2DCCDIK_ga7cg")
 modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 
 [node name="Jugador" type="CharacterBody2D"]
+position = Vector2(1, 2)
 
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base"]
-position = Vector2(386.084, 206.017)
-rotation = 0.0402705
+position = Vector2(73.0606, -52.5256)
+rotation = 0.0403002
 scale = Vector2(0.349744, 0.349744)
 texture = ExtResource("1_6bwjl")
 
 [node name="AntebrazoIc" type="Sprite2D" parent="base"]
-position = Vector2(242.885, 201.006)
-rotation = 0.00929238
-scale = Vector2(0.350065, 0.350065)
+position = Vector2(-70.1367, -57.536)
+rotation = 0.0092312
+scale = Vector2(0.350074, 0.350074)
 texture = ExtResource("2_fa22g")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(357.258, 243.831)
-rotation = 1.49704
+position = Vector2(44.2348, -14.7085)
+rotation = 1.49696
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(272.19, 240.345)
-rotation = -1.50376
+position = Vector2(-40.8304, -18.1724)
+rotation = -1.50325
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
-position = Vector2(309, 304)
+position = Vector2(-4.02253, 45.4578)
 rotation = -0.000400066
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_28xov")
@@ -128,7 +129,7 @@ texture = ExtResource("5_28xov")
 modification_stack = SubResource("SkeletonModificationStack2D_mxd1t")
 
 [node name="cintura" type="Bone2D" parent="Skeleton2D"]
-position = Vector2(315, 304)
+position = Vector2(1.97746, 45.4579)
 rotation = -1.57079
 rest = Transform2D(6.27438e-06, -1, 1, 6.27438e-06, 315, 304)
 
@@ -250,15 +251,15 @@ rest = Transform2D(0.923811, 0.382849, -0.382849, 0.923811, -26.1784, -27.7073)
 [node name="IK" type="Node2D" parent="."]
 
 [node name="manoDerechaIK" type="Node2D" parent="IK"]
-position = Vector2(391, 181)
+position = Vector2(77.9775, -77.5421)
 script = ExtResource("2_2j5uy")
 
 [node name="manoIzquierdaIK" type="Node2D" parent="IK"]
-position = Vector2(242, 181)
+position = Vector2(-71.0225, -77.5421)
 script = ExtResource("3_swlmf")
 
 [node name="pieIzquierdoIK" type="Node2D" parent="IK"]
-position = Vector2(292, 362)
+position = Vector2(-21.0225, 103.458)
 
 [node name="pieDerechoIK" type="Node2D" parent="IK"]
-position = Vector2(339, 364)
+position = Vector2(25.9775, 105.458)

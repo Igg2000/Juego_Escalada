@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=3 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
+[ext_resource type="PackedScene" uid="uid://bofke32sctxnq" path="res://scenes/jugador.tscn" id="2_rgf5d"]
 
 [node name="Mapa1" type="Node2D"]
 
@@ -9,3 +10,7 @@ texture_filter = 1
 position = Vector2(2154, -427)
 scale = Vector2(9, 9)
 texture = ExtResource("1_b1n0p")
+
+[node name="Jugador" parent="." instance=ExtResource("2_rgf5d")]
+position = Vector2(-98, 74)
+scale = Vector2(0.75, 0.75)
