@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=7 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
 [ext_resource type="Texture2D" uid="uid://bj2hhgcw86n0c" path="res://assets/tilemap/map_1.png" id="2_8swhn"]
 [ext_resource type="PackedScene" uid="uid://bofke32sctxnq" path="res://scenes/jugador.tscn" id="2_rgf5d"]
+[ext_resource type="PackedScene" uid="uid://demgjsxt28kw7" path="res://scenes/rock.tscn" id="4_aa7cn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uiyvb"]
 texture = ExtResource("2_8swhn")
@@ -581,3 +582,6 @@ position = Vector2(336, 340)
 scale = Vector2(0.75, 0.75)
 
 [node name="Rocas" type="Node2D" parent="."]
+
+[node name="Rock" parent="Rocas" instance=ExtResource("4_aa7cn")]
+position = Vector2(295, 225)
