@@ -1,10 +1,38 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl2qa3pt810kw"]
+[gd_scene load_steps=8 format=3 uid="uid://bl2qa3pt810kw"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_tdlpm"]
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="2_og4ma"]
 [ext_resource type="Texture2D" uid="uid://y2mydyqhak04" path="res://icon.svg" id="3_0sdb0"]
 [ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="3_g0byh"]
 [ext_resource type="Script" path="res://scenes/logo_menu.gd" id="4_irebo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkhdx"]
+bg_color = Color(0.666569, 0.666569, 0.666569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p63qc"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -96,23 +124,41 @@ size_flags_vertical = 6
 [node name="TiempoButton" type="Button" parent="VBoxMenu/HBoxCentral"]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_g0byh")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
 text = "Tiempo"
 
 [node name="AlturaButton" type="Button" parent="VBoxMenu/HBoxCentral"]
 layout_mode = 2
 size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_g0byh")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
 text = "Altura"
 
 [node name="CreadoresButton" type="Button" parent="VBoxMenu"]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_g0byh")
 theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
 text = "Creadores"
 
 [connection signal="pressed" from="VBoxMenu/HBoxCentral/TiempoButton" to="." method="_on_tiempo_button_pressed"]
