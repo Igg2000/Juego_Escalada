@@ -1,12 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=15 format=3 uid="uid://bofke32sctxnq"]
 
-[ext_resource type="Texture2D" uid="uid://cdr4qiff2xyyl" path="res://assets/character/antebrazoDC.png" id="1_6bwjl"]
+[ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="1_lu4vh"]
 [ext_resource type="Script" path="res://scripts/mano_derecha_ik.gd" id="2_2j5uy"]
-[ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="2_fa22g"]
+[ext_resource type="Texture2D" uid="uid://bsqlgw6wp6vy5" path="res://assets/character/antebrazoIA_v2.png" id="2_g37r3"]
 [ext_resource type="Texture2D" uid="uid://b2ac7xhvx30ah" path="res://assets/character/brazoD.png" id="3_5343f"]
 [ext_resource type="Script" path="res://scripts/mano_izquierda_ik.gd" id="3_swlmf"]
 [ext_resource type="Texture2D" uid="uid://v5yc8wfd0tcn" path="res://assets/character/brazoI.png" id="4_l3mph"]
 [ext_resource type="Texture2D" uid="uid://dpn2spm04r5pg" path="res://assets/character/posNormal.png" id="5_28xov"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ep8sc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o418e"]
+radius = 8.97632
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_7s41x"]
 target_nodepath = NodePath("../IK/manoDerechaIK")
@@ -96,31 +101,45 @@ position = Vector2(1, 2)
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base"]
-position = Vector2(73.0614, -52.5255)
-rotation = 0.0402698
-scale = Vector2(0.349744, 0.349744)
-texture = ExtResource("1_6bwjl")
+position = Vector2(73.0332, -52.5313)
+rotation = 0.0413979
+scale = Vector2(0.349741, 0.349741)
+texture = ExtResource("1_lu4vh")
+
+[node name="Area2D" type="Area2D" parent="base/AntebrazoDc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base/AntebrazoDc/Area2D"]
+position = Vector2(9.42544, -116.2)
+scale = Vector2(3.50019, 3.50019)
+shape = SubResource("CapsuleShape2D_ep8sc")
 
 [node name="AntebrazoIc" type="Sprite2D" parent="base"]
-position = Vector2(-70.1379, -57.5364)
-rotation = 0.00929285
-scale = Vector2(0.350065, 0.350065)
-texture = ExtResource("2_fa22g")
+position = Vector2(-70.1563, -57.535)
+rotation = 0.0102135
+scale = Vector2(0.350075, 0.350075)
+texture = ExtResource("2_g37r3")
+
+[node name="Area2D" type="Area2D" parent="base/AntebrazoIc"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="base/AntebrazoIc/Area2D"]
+position = Vector2(-9.09663, -95.5063)
+scale = Vector2(3.50019, 3.50019)
+shape = SubResource("CapsuleShape2D_o418e")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2351, -14.7114)
-rotation = 1.49703
+position = Vector2(44.1565, -14.7194)
+rotation = 1.49722
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8325, -18.1968)
-rotation = -1.50376
-scale = Vector2(0.349953, 0.349953)
+position = Vector2(-40.9124, -18.2214)
+rotation = -1.50428
+scale = Vector2(0.349954, 0.349954)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
-position = Vector2(-4.02253, 45.4578)
+position = Vector2(-4.02253, 45.4579)
 rotation = -0.000400066
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_28xov")
