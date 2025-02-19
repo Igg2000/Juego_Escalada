@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://demgjsxt28kw7"]
+[gd_scene load_steps=4 format=3 uid="uid://demgjsxt28kw7"]
 
+[ext_resource type="Script" path="res://scripts/rock.gd" id="1_a45p0"]
 [ext_resource type="Texture2D" uid="uid://spqisw6v3po3" path="res://assets/rocas/Pixel Art Rock Pile Pack/Rock Pile - SILVER -/Rock Pile 6 - SILVER - BIG.PNG" id="1_uycm3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahjwx"]
@@ -8,6 +9,7 @@ height = 34.1357
 
 [node name="Rock" type="Node2D"]
 scale = Vector2(0.5, 0.5)
+script = ExtResource("1_a45p0")
 
 [node name="img_roca" type="Sprite2D" parent="."]
 texture_filter = 1
