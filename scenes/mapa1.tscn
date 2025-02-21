@@ -580,7 +580,10 @@ layer_0/tile_data = PackedInt32Array(589824, 1048576, 4, 589825, 1114112, 4, 589
 [node name="Rocas" type="Node2D" parent="."]
 
 [node name="Rock" parent="Rocas" instance=ExtResource("4_aa7cn")]
-position = Vector2(393, 243)
+position = Vector2(339, 214)
+
+[node name="Rock2" parent="Rocas" instance=ExtResource("4_aa7cn")]
+position = Vector2(277, 237)
 
 [node name="Jugador" parent="." instance=ExtResource("2_rgf5d")]
 position = Vector2(336, 340)

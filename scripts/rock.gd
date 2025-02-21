@@ -10,15 +10,15 @@ func _ready():
 		print("Error: No se encontró el nodo Area2D en Rock")  # Mensaje de error
 
 func _on_body_entered(body):
-	print("Cuerpo detectado:", body.name)  # Verifica qué cuerpo está entrando
-	if body.is_in_group("AntebrazoDc"):
+	#print("Cuerpo detectado:", body.name)  # Verifica qué cuerpo está entrando
+	if body.is_in_group("AntebrazoIc"):
 		print("Brazo cerca de la roca")
 	else:
 		print("Otro cuerpo detectado:", body.name)  # Verifica si otros cuerpos están entrando
 
 func _on_body_exited(body):
-	print("Cuerpo que sale:", body.name)  # Verifica qué cuerpo está saliendo
-	if body.is_in_group("AntebrazoDc"):
+	#print("Cuerpo que sale:", body.name)  # Verifica qué cuerpo está saliendo
+	if body.is_in_group("AntebrazoIc"):
 		print("Brazo se aleja de la roca")
 	else:
 		print("Otro cuerpo sale:", body.name)  # Verifica si otros cuerpos están saliendo

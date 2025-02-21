@@ -102,7 +102,7 @@ position = Vector2(1, 2)
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base" groups=["AntebrazoDc"]]
 position = Vector2(73.0613, -52.5254)
-rotation = 0.0402727
+rotation = 0.0402736
 scale = Vector2(0.349745, 0.349745)
 texture = ExtResource("1_lu4vh")
 
@@ -114,13 +114,14 @@ position = Vector2(9.42544, -116.2)
 scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_ep8sc")
 
-[node name="AntebrazoIc" type="Sprite2D" parent="base"]
+[node name="AntebrazoIc" type="Sprite2D" parent="base" groups=["AntebrazoIc"]]
 position = Vector2(-70.138, -57.5363)
-rotation = 0.00929869
+rotation = 0.00930107
 scale = Vector2(0.350067, 0.350067)
 texture = ExtResource("2_g37r3")
 
-[node name="Area2D" type="Area2D" parent="base/AntebrazoIc"]
+[node name="Area2D" type="Area2D" parent="base/AntebrazoIc" groups=["AntebrazoIc"]]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="base/AntebrazoIc/Area2D"]
 position = Vector2(-9.09663, -95.5063)
@@ -128,13 +129,13 @@ scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_o418e")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2349, -14.7113)
+position = Vector2(44.2348, -14.7113)
 rotation = 1.49704
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8327, -18.1966)
+position = Vector2(-40.8328, -18.1966)
 rotation = -1.50377
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
