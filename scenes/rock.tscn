@@ -15,8 +15,9 @@ script = ExtResource("1_a45p0")
 texture_filter = 1
 texture = ExtResource("1_uycm3")
 
-[node name="Area2D" type="Area2D" parent="img_roca"]
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="img_roca/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = -1.56518
 shape = SubResource("CapsuleShape2D_ahjwx")
