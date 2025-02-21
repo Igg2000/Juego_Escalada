@@ -4,8 +4,8 @@ func _ready():
 	print("Script de Rock iniciado")  # Verifica que el script se esté ejecutando
 	if has_node("Area2D"):
 		print("Area2D encontrado en Rock")  # Verifica que el Area2D exista
-		$Area2D.connect("body_entered", Callable(self, "_on_body_entered"))
-		$Area2D.connect("body_exited", Callable(self, "_on_body_exited"))
+		$Area2D.connect("area_entered", Callable(self, "_on_body_entered"))
+		$Area2D.connect("area_exited", Callable(self, "_on_body_exited"))
 	else:
 		print("Error: No se encontró el nodo Area2D en Rock")  # Mensaje de error
 
