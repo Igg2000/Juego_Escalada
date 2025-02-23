@@ -16,42 +16,61 @@ func _ready():
 		printerr("Error: No se encontró Area2D en la roca")
 
 func _on_area_entered(area):
-	#Verificamos si el área pertenece a los brazos
 	if area.is_in_group("AntebrazoIc") || area.is_in_group("AntebrazoDc"):
-		#Obtenemos la jerarquía completa: Area2D -> Antebrazo -> base -> Jugador
 		if area.get_parent().is_in_group("AntebrazoIc"):
 			brazo_izquierdo = area.get_parent()
 		if area.get_parent().is_in_group("AntebrazoDc"):
 			brazo_derecho = area.get_parent()
-		
 		puede_agarrarse = true
-		#print("Brazo detectado cerca de la roca")
 
 func _on_area_exited(area):
 	if area.is_in_group("AntebrazoIc") || area.is_in_group("AntebrazoDc"):
 		puede_agarrarse = false
 		resetear_texturas()
-		#print("Brazo se aleja de la roca")
 
 func _input(event):
 	if event is InputEventKey:
-		if event.pressed && event.keycode == KEY_SHIFT:
-			if puede_agarrarse:
+		if event.keycode == KEY_SHIFT:
+			if event.pressed && puede_agarrarse:
 				cambiar_textura_agarre(true)
+				bloquear_movimiento()  # Bloquear movimiento al presionar
 			else:
 				cambiar_textura_agarre(false)
+				desbloquear_movimiento()  # Desbloquear al soltar
 
 func cambiar_textura_agarre(agarrado: bool):
 	if agarrado:
-		if brazo_izquierdo: brazo_izquierdo.texture = textura_agarrado_BrazoIz
-		if brazo_derecho: brazo_derecho.texture = textura_agarrado_BrazoDr
-		print("¡Agarrándose a la roca!")
+		if brazo_izquierdo: 
+			brazo_izquierdo.texture = textura_agarrado_BrazoIz
+		if brazo_derecho: 
+			brazo_derecho.texture = textura_agarrado_BrazoDr
 	else:
 		resetear_texturas()
-		print("Soltando la roca")
 
 func resetear_texturas():
 	if brazo_izquierdo: 
 		brazo_izquierdo.texture = textura_normal_BrazoIz
 	if brazo_derecho: 
 		brazo_derecho.texture = textura_normal_BrazoDr
+
+func bloquear_movimiento():
+	if brazo_izquierdo:
+		# Subimos en la jerarquía para llegar a `base` y luego buscamos `manoIzquierdaIK`
+		var mano_izquierda = brazo_izquierdo.get_parent().get_parent().get_node_or_null("IK/manoIzquierdaIK")
+		if mano_izquierda and mano_izquierda.has_method("set_can_move"):
+			mano_izquierda.set_can_move(false)
+	if brazo_derecho:
+	# Subimos en la jerarquía para llegar a `base` y luego buscamos `manoDerechaIK`
+		var mano_derecha = brazo_derecho.get_parent().get_parent().get_node_or_null("IK/manoDerechaIK")
+		if mano_derecha and mano_derecha.has_method("set_can_move"):
+			mano_derecha.set_can_move(false)
+				
+func desbloquear_movimiento():
+	if brazo_izquierdo:
+		var mano_izquierda = brazo_izquierdo.get_parent().get_parent().get_node_or_null("IK/manoIzquierdaIK")
+		if mano_izquierda and mano_izquierda.has_method("set_can_move"):
+			mano_izquierda.can_move = true
+	if brazo_derecho:
+		var mano_derecha = brazo_derecho.get_parent().get_parent().get_node_or_null("IK/manoDerechaIK")
+		if mano_derecha and mano_derecha.has_method("set_can_move"):
+			mano_derecha.can_move = true

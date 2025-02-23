@@ -7,31 +7,38 @@ extends Node2D
 
 var initial_position: Vector2  
 var initial_rotation: float  
+@export var can_move: bool = true   
 
 func _ready():
 	initial_position = position  
 	initial_rotation = rotation  
 
 func _process(delta):
-	var direction = Vector2.ZERO
+	if !can_move:
+		return
+	else:
+		var direction = Vector2.ZERO
 
-	# Controles con WASD
-	if Input.is_key_pressed(KEY_W):
-		direction.y -= 1
-	elif Input.is_key_pressed(KEY_S):
-		direction.y += 1
+		# Controles con WASD
+		if Input.is_key_pressed(KEY_W):
+			direction.y -= 1
+		elif Input.is_key_pressed(KEY_S):
+			direction.y += 1
 
-	if Input.is_key_pressed(KEY_A):
-		direction.x -= 1
-	elif Input.is_key_pressed(KEY_D):
-		direction.x += 1
+		if Input.is_key_pressed(KEY_A):
+			direction.x -= 1
+		elif Input.is_key_pressed(KEY_D):
+			direction.x += 1
 
-	# Movimiento restringido con límite en X
-	var new_position = position + direction.normalized() * speed * delta
-	new_position.x = clamp(new_position.x, initial_position.x - x_limit, initial_position.x + x_limit)  
-	position = new_position
+		# Movimiento restringido con límite en X
+		var new_position = position + direction.normalized() * speed * delta
+		new_position.x = clamp(new_position.x, initial_position.x - x_limit, initial_position.x + x_limit)  
+		position = new_position
 
-	# Regreso progresivo cuando no hay input
-	if direction == Vector2.ZERO:
-		position = position.lerp(initial_position + Vector2(0, hang_distance), return_speed * delta)
-		rotation = lerp_angle(rotation, deg_to_rad(90), return_speed * delta)
+		# Regreso progresivo cuando no hay input
+		if direction == Vector2.ZERO:
+			position = position.lerp(initial_position + Vector2(0, hang_distance), return_speed * delta)
+			rotation = lerp_angle(rotation, deg_to_rad(90), return_speed * delta)
+
+func set_can_move(mover):
+	can_move = mover
