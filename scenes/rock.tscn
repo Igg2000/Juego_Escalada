@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://demgjsxt28kw7"]
+[gd_scene load_steps=8 format=3 uid="uid://demgjsxt28kw7"]
 
 [ext_resource type="Script" path="res://scripts/rock.gd" id="1_a45p0"]
 [ext_resource type="Texture2D" uid="uid://spqisw6v3po3" path="res://assets/rocas/Pixel Art Rock Pile Pack/Rock Pile - SILVER -/Rock Pile 6 - SILVER - BIG.PNG" id="1_uycm3"]
+[ext_resource type="Texture2D" uid="uid://bsqlgw6wp6vy5" path="res://assets/character/antebrazoIA_v2.png" id="2_86r8o"]
+[ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="3_yqu57"]
+[ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="4_8ctj6"]
+[ext_resource type="Texture2D" uid="uid://cdr4qiff2xyyl" path="res://assets/character/antebrazoDC.png" id="5_g116f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ahjwx"]
 radius = 12.989
@@ -10,6 +14,10 @@ height = 34.1357
 [node name="Rock" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_a45p0")
+textura_normal_BrazoIz = ExtResource("2_86r8o")
+textura_agarrado_BrazoIz = ExtResource("3_yqu57")
+textura_normal_BrazoDr = ExtResource("4_8ctj6")
+textura_agarrado_BrazoDr = ExtResource("5_g116f")
 
 [node name="img_roca" type="Sprite2D" parent="."]
 texture_filter = 1
