@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cva6qdk382sij"
+path="res://.godot/imported/Jota the Climber_gameover.wav-8e89b99a4a44c106e0db5f796db0ab0a.sample"
+
+[deps]
+
+source_file="res://assets/musica/Jota the Climber_gameover.wav"
+dest_files=["res://.godot/imported/Jota the Climber_gameover.wav-8e89b99a4a44c106e0db5f796db0ab0a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

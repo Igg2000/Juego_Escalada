@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://koer1lhqcyaj"]
+
+[ext_resource type="Script" path="res://scenes/menu_n1_superado.gd" id="1_iatep"]
+[ext_resource type="Texture2D" uid="uid://ceqdqo7uyq4uh" path="res://assets/menu/GUI.png" id="1_pfy3m"]
+[ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="2_i04fd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pppp"]
+atlas = ExtResource("1_pfy3m")
+region = Rect2(2.12982, 32.715, 44.2875, 46.9208)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1addy"]
+bg_color = Color(0.666569, 0.666569, 0.666569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oiufw"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="MenuN1Enhorabuena" type="Node"]
+script = ExtResource("1_iatep")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 232.0
+offset_top = 88.0
+offset_right = 890.0
+offset_bottom = 542.0
+texture = SubResource("AtlasTexture_2pppp")
+
+[node name="gameover_n1" type="Label" parent="."]
+offset_left = 329.0
+offset_top = 157.0
+offset_right = 766.0
+offset_bottom = 248.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.549314, 0.452668, 0.12706, 1)
+theme_override_fonts/font = ExtResource("2_i04fd")
+theme_override_font_sizes/font_size = 50
+text = "¡¡Nivel Superado!!"
+
+[node name="Tiempo_Y" type="Label" parent="."]
+offset_left = 470.0
+offset_top = 226.0
+offset_right = 656.0
+offset_bottom = 287.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_i04fd")
+theme_override_font_sizes/font_size = 35
+text = "Tiempo Y"
+
+[node name="HighScore_n1" type="Label" parent="."]
+offset_left = 358.0
+offset_top = 286.0
+offset_right = 612.0
+offset_bottom = 347.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_i04fd")
+theme_override_font_sizes/font_size = 35
+text = "Record Time: "
+
+[node name="Tiempo_n1" type="Label" parent="HighScore_n1"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 2.0
+offset_right = 450.0
+offset_bottom = 63.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_i04fd")
+theme_override_font_sizes/font_size = 35
+text = "Tiempo"
+
+[node name="PlayAgainButton_n1" type="Button" parent="."]
+offset_left = 316.0
+offset_top = 388.0
+offset_right = 700.0
+offset_bottom = 478.0
+scale = Vector2(0.614655, 0.606118)
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i04fd")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_1addy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1addy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiufw")
+text = "Play Again"
+
+[node name="HomeButton_n1" type="Button" parent="."]
+offset_left = 657.0
+offset_top = 390.0
+offset_right = 862.0
+offset_bottom = 478.0
+scale = Vector2(0.738272, 0.637809)
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_i04fd")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_1addy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1addy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_oiufw")
+text = "Home"

@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctusqcm8fj73o"]
+
+[ext_resource type="Texture2D" uid="uid://ceqdqo7uyq4uh" path="res://assets/menu/GUI.png" id="1_p21vx"]
+[ext_resource type="Script" path="res://scenes/menu_n2_gameover.gd" id="1_q01pj"]
+[ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="2_3irpc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n241i"]
+atlas = ExtResource("1_p21vx")
+region = Rect2(2.12982, 32.715, 44.2875, 46.9208)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ces"]
+bg_color = Color(0.666569, 0.666569, 0.666569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45udk"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[node name="menu_n2_gameover" type="Node"]
+script = ExtResource("1_q01pj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 232.0
+offset_top = 88.0
+offset_right = 890.0
+offset_bottom = 542.0
+texture = SubResource("AtlasTexture_n241i")
+
+[node name="gameover_n1" type="Label" parent="."]
+offset_left = 339.0
+offset_top = 137.0
+offset_right = 776.0
+offset_bottom = 228.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.752396, 0.297879, 0.155693, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 75
+text = "Game Over"
+
+[node name="Altura_n2" type="Label" parent="."]
+offset_left = 351.0
+offset_top = 242.0
+offset_right = 605.0
+offset_bottom = 303.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 35
+text = "Altura: "
+
+[node name="X_Metros" type="Label" parent="Altura_n2"]
+offset_left = 264.0
+offset_top = 2.0
+offset_right = 450.0
+offset_bottom = 63.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 35
+text = "X_Metros!"
+
+[node name="HighScore_n2" type="Label" parent="."]
+offset_left = 347.0
+offset_top = 301.0
+offset_right = 601.0
+offset_bottom = 362.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 35
+text = "Record Time: "
+
+[node name="Y_Metros" type="Label" parent="HighScore_n2"]
+offset_left = 264.0
+offset_top = 2.0
+offset_right = 450.0
+offset_bottom = 63.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 35
+text = "Y_Metros!"
+
+[node name="PlayAgainButton_n1" type="Button" parent="."]
+offset_left = 316.0
+offset_top = 388.0
+offset_right = 700.0
+offset_bottom = 478.0
+scale = Vector2(0.614655, 0.606118)
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1ces")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f1ces")
+theme_override_styles/normal = SubResource("StyleBoxFlat_45udk")
+text = "Play Again"
+
+[node name="HomeButton_n1" type="Button" parent="."]
+offset_left = 657.0
+offset_top = 390.0
+offset_right = 862.0
+offset_bottom = 478.0
+scale = Vector2(0.738272, 0.637809)
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3irpc")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1ces")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_f1ces")
+theme_override_styles/normal = SubResource("StyleBoxFlat_45udk")
+text = "Home"
