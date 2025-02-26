@@ -1,13 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=7 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
 [ext_resource type="Texture2D" uid="uid://bj2hhgcw86n0c" path="res://assets/tilemap/map_1.png" id="2_8swhn"]
 [ext_resource type="PackedScene" uid="uid://bofke32sctxnq" path="res://scenes/jugador.tscn" id="2_rgf5d"]
 [ext_resource type="PackedScene" uid="uid://demgjsxt28kw7" path="res://scenes/rock.tscn" id="4_aa7cn"]
-[ext_resource type="Texture2D" uid="uid://bsqlgw6wp6vy5" path="res://assets/character/antebrazoIA_v2.png" id="4_cqodx"]
-[ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="5_bgfla"]
-[ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="6_k5mto"]
-[ext_resource type="Texture2D" uid="uid://cdr4qiff2xyyl" path="res://assets/character/antebrazoDC.png" id="7_74ig5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uiyvb"]
 texture = ExtResource("2_8swhn")
@@ -584,18 +580,10 @@ layer_0/tile_data = PackedInt32Array(589824, 1048576, 4, 589825, 1114112, 4, 589
 [node name="Rocas" type="Node2D" parent="."]
 
 [node name="Rock" parent="Rocas" instance=ExtResource("4_aa7cn")]
-position = Vector2(394, 240)
-textura_normal_BrazoIz = ExtResource("4_cqodx")
-textura_agarrado_BrazoIz = ExtResource("5_bgfla")
-textura_normal_BrazoDr = ExtResource("6_k5mto")
-textura_agarrado_BrazoDr = ExtResource("7_74ig5")
+position = Vector2(326, 253)
 
 [node name="Rock2" parent="Rocas" instance=ExtResource("4_aa7cn")]
-position = Vector2(283, 241)
-textura_normal_BrazoIz = ExtResource("4_cqodx")
-textura_agarrado_BrazoIz = ExtResource("5_bgfla")
-textura_normal_BrazoDr = ExtResource("6_k5mto")
-textura_agarrado_BrazoDr = ExtResource("7_74ig5")
+position = Vector2(283, 253)
 
 [node name="Jugador" parent="." instance=ExtResource("2_rgf5d")]
 position = Vector2(336, 340)

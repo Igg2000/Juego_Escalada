@@ -5,13 +5,23 @@ extends Node2D
 @export var return_speed: float = 1.5  # Velocidad de regreso más fluida
 @export var hang_distance: float = 150.0  # Cuánto cuelga el brazo
 
+var hombroIzq: Bone2D
+var codoIzq: Bone2D
+var torso: Bone2D
+var manoIzq: Node2D
+var distanciaTorsoHombro: float
 var initial_position: Vector2  
 var initial_rotation: float  
 @export var can_move: bool = true   
 
 func _ready():
 	initial_position = position  
-	initial_rotation = rotation  
+	initial_rotation = rotation
+	hombroIzq = get_parent().get_parent().get_node("Skeleton2D/cintura/torso/hombroIzquierdo")
+	torso = get_parent().get_parent().get_node("Skeleton2D/cintura/torso")
+	codoIzq = get_parent().get_parent().get_node("Skeleton2D/cintura/torso/hombroIzquierdo/codoIzquierdo")
+	manoIzq = get_parent().get_parent().get_node("Skeleton2D/cintura/torso/hombroIzquierdo/codoIzquierdo/manoIzquierda/Marker2D")
+	distanciaTorsoHombro = hombroIzq.global_position.y - torso.global_position.y
 
 func _process(delta):
 	if !can_move:
@@ -42,3 +52,29 @@ func _process(delta):
 
 func set_can_move(mover):
 	can_move = mover
+
+func subirHombro():
+	var posicionY = manoIzq.global_position.y
+	print(posicionY)
+	
+	var diferencia_y = codoIzq.global_position.y - torso.global_position.y
+	
+	var objetivo_y = torso.global_position.y + diferencia_y  
+	var velocidad = 0.1  
+	
+	while abs(torso.global_position.y - objetivo_y) > 1.0:  # Mientras no esté cerca del objetivo
+		global_position.y = posicionY
+		torso.global_position.y = lerp(torso.global_position.y, objetivo_y, velocidad)
+		global_position.y = posicionY
+		await get_tree().process_frame  
+	
+	torso.global_position.y = objetivo_y
+	global_position.y = posicionY
+	print(global_position.y)
+
+
+
+
+
+
+	
