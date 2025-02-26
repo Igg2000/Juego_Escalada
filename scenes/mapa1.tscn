@@ -586,8 +586,9 @@ position = Vector2(326, 253)
 position = Vector2(283, 253)
 
 [node name="Jugador" parent="." instance=ExtResource("2_rgf5d")]
-position = Vector2(336, 340)
+position = Vector2(339, 302)
 scale = Vector2(0.75, 0.75)
+collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 zoom = Vector2(1.5, 1.5)

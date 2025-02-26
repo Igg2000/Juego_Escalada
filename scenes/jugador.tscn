@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=17 format=3 uid="uid://bofke32sctxnq"]
 
+[ext_resource type="Script" path="res://scripts/jugador.gd" id="1_1qvts"]
 [ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="1_lu4vh"]
 [ext_resource type="Script" path="res://scripts/mano_derecha_ik.gd" id="2_2j5uy"]
 [ext_resource type="Texture2D" uid="uid://bsqlgw6wp6vy5" path="res://assets/character/antebrazoIA_v2.png" id="2_g37r3"]
@@ -96,15 +97,20 @@ modifications/1 = SubResource("SkeletonModification2DCCDIK_k6lba")
 modifications/2 = SubResource("SkeletonModification2DCCDIK_ga7cg")
 modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71nml"]
+size = Vector2(88, 177)
+
 [node name="Jugador" type="CharacterBody2D"]
 position = Vector2(1, 2)
+collision_layer = 0
+script = ExtResource("1_1qvts")
 
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="Sprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.0585, -52.526)
-rotation = 0.040387
-scale = Vector2(0.349745, 0.349745)
+position = Vector2(73.0542, -52.527)
+rotation = 0.0405583
+scale = Vector2(0.349743, 0.349743)
 texture = ExtResource("1_lu4vh")
 
 [node name="Area2D" type="Area2D" parent="base/AntebrazoDc" groups=["AntebrazoDc"]]
@@ -116,8 +122,8 @@ scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_ep8sc")
 
 [node name="AntebrazoIc" type="Sprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.0694, -57.5388)
-rotation = 0.00587273
+position = Vector2(-70.0733, -57.5387)
+rotation = 0.0060655
 scale = Vector2(0.350077, 0.350077)
 texture = ExtResource("2_g37r3")
 
@@ -130,14 +136,14 @@ scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_o418e")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.226, -14.7146)
-rotation = 1.4971
+position = Vector2(44.2148, -14.7191)
+rotation = 1.49718
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.5151, -15.1302)
-rotation = -1.40956
+position = Vector2(-40.5266, -15.1344)
+rotation = -1.40962
 scale = Vector2(0.349957, 0.349957)
 texture = ExtResource("4_l3mph")
 
@@ -287,3 +293,7 @@ position = Vector2(-21.0225, 103.458)
 
 [node name="pieDerechoIK" type="Node2D" parent="IK"]
 position = Vector2(25.9775, 105.458)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 32.5)
+shape = SubResource("RectangleShape2D_71nml")

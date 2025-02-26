@@ -54,23 +54,31 @@ func set_can_move(mover):
 	can_move = mover
 
 func subirHombro():
-	var posicionY = manoIzq.global_position.y
-	print(posicionY)
-	
-	var diferencia_y = codoIzq.global_position.y - torso.global_position.y
-	
-	var objetivo_y = torso.global_position.y + diferencia_y  
-	var velocidad = 0.1  
-	
+	var posicionY = manoIzq.global_position.y  # Guarda la posición Y inicial de la mano
+	var diferencia_x = torso.global_position.x - manoIzq.global_position.x  # Diferencia horizontal entre torso y mano
+	var diferencia_y = codoIzq.global_position.y - torso.global_position.y  # Diferencia vertical entre codo y torso
+	var objetivo_y = torso.global_position.y + diferencia_y  # Altura objetivo del torso
+	var velocidad = 0.1  # Velocidad de interpolación
+
+	# Mueve el torso hacia arriba mientras mantienes la distancia X
 	while abs(torso.global_position.y - objetivo_y) > 1.0:  # Mientras no esté cerca del objetivo
-		global_position.y = posicionY
+		# Interpola la posición Y del torso
 		torso.global_position.y = lerp(torso.global_position.y, objetivo_y, velocidad)
-		global_position.y = posicionY
-		await get_tree().process_frame  
-	
+
+		# Mantén la posición X del torso a la misma distancia de la mano
+		torso.global_position.x = manoIzq.global_position.x + diferencia_x
+
+		# Mantén la mano en su posición Y inicial
+		manoIzq.global_position.y = posicionY
+
+		# Espera al siguiente frame
+		await get_tree().process_frame
+
+	# Asegura que el torso esté en su posición final
 	torso.global_position.y = objetivo_y
-	global_position.y = posicionY
-	print(global_position.y)
+	torso.global_position.x = manoIzq.global_position.x + diferencia_x
+	manoIzq.global_position.y = posicionY
+	print("Subida completada")
 
 
 
