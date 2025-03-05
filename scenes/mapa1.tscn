@@ -580,15 +580,20 @@ layer_0/tile_data = PackedInt32Array(589824, 1048576, 4, 589825, 1114112, 4, 589
 [node name="Rocas" type="Node2D" parent="."]
 
 [node name="Rock" parent="Rocas" instance=ExtResource("4_aa7cn")]
-position = Vector2(326, 253)
+position = Vector2(394, 240)
+
+[node name="Rock3" parent="Rocas" instance=ExtResource("4_aa7cn")]
+position = Vector2(336, 193)
+
+[node name="Rock4" parent="Rocas" instance=ExtResource("4_aa7cn")]
+position = Vector2(442, 193)
 
 [node name="Rock2" parent="Rocas" instance=ExtResource("4_aa7cn")]
-position = Vector2(283, 253)
+position = Vector2(283, 241)
 
 [node name="Jugador" parent="." instance=ExtResource("2_rgf5d")]
-position = Vector2(339, 302)
+position = Vector2(336, 340)
 scale = Vector2(0.75, 0.75)
-collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 zoom = Vector2(1.5, 1.5)

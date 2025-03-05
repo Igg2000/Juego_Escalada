@@ -9,6 +9,9 @@ var initial_position: Vector2
 var initial_rotation: float
 @export var can_move: bool = true   
 
+signal agarrado
+signal soltado
+
 func _ready():
 	initial_position = position  
 	initial_rotation = rotation  
@@ -41,4 +44,15 @@ func _process(delta):
 			rotation = lerp_angle(rotation, deg_to_rad(90), return_speed * delta)
 
 func set_can_move(mover):
+	
+	#si el brazo se podia mover y le digo que se bloquee, emito señal de agarrado
+	if can_move and not mover:
+		agarrado.emit()
+	
+	#hago lo contrario
+	if not can_move and mover:
+		soltado.emit()
+		
+		
 	can_move = mover
+	

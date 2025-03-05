@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var puede_agarrarse = false
 @export var textura_normal_BrazoIz: Texture2D
 @export var textura_agarrado_BrazoIz: Texture2D
@@ -66,7 +67,7 @@ func bloquear_movimiento(lado: String):
 		var mano_izquierda = brazo_izquierdo.get_parent().get_parent().get_node_or_null("IK/manoIzquierdaIK")
 		if mano_izquierda and mano_izquierda.has_method("set_can_move"):
 			mano_izquierda.set_can_move(false)
-			mano_izquierda.subirHombro()
+			
 	elif lado == "derecha" and brazo_derecho:
 		var mano_derecha = brazo_derecho.get_parent().get_parent().get_node_or_null("IK/manoDerechaIK")
 		if mano_derecha and mano_derecha.has_method("set_can_move"):

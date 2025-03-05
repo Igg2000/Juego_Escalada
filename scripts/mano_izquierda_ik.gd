@@ -5,23 +5,16 @@ extends Node2D
 @export var return_speed: float = 1.5  # Velocidad de regreso más fluida
 @export var hang_distance: float = 150.0  # Cuánto cuelga el brazo
 
-var hombroIzq: Bone2D
-var codoIzq: Bone2D
-var torso: Bone2D
-var manoIzq: Node2D
-var distanciaTorsoHombro: float
 var initial_position: Vector2  
 var initial_rotation: float  
 @export var can_move: bool = true   
 
+signal agarrado
+signal soltado
+
 func _ready():
 	initial_position = position  
-	initial_rotation = rotation
-	hombroIzq = get_parent().get_parent().get_node("Skeleton2D/cintura/torso/hombroIzquierdo")
-	torso = get_parent().get_parent().get_node("Skeleton2D/cintura/torso")
-	codoIzq = get_parent().get_parent().get_node("Skeleton2D/cintura/torso/hombroIzquierdo/codoIzquierdo")
-	manoIzq = get_parent().get_parent().get_node("Skeleton2D/cintura/torso/hombroIzquierdo/codoIzquierdo/manoIzquierda/Marker2D")
-	distanciaTorsoHombro = hombroIzq.global_position.y - torso.global_position.y
+	initial_rotation = rotation  
 
 func _process(delta):
 	if !can_move:
@@ -51,38 +44,14 @@ func _process(delta):
 			rotation = lerp_angle(rotation, deg_to_rad(90), return_speed * delta)
 
 func set_can_move(mover):
-	can_move = mover
-
-func subirHombro():
-	var posicionY = manoIzq.global_position.y  # Guarda la posición Y inicial de la mano
-	var diferencia_x = torso.global_position.x - manoIzq.global_position.x  # Diferencia horizontal entre torso y mano
-	var diferencia_y = codoIzq.global_position.y - torso.global_position.y  # Diferencia vertical entre codo y torso
-	var objetivo_y = torso.global_position.y + diferencia_y  # Altura objetivo del torso
-	var velocidad = 0.1  # Velocidad de interpolación
-
-	# Mueve el torso hacia arriba mientras mantienes la distancia X
-	while abs(torso.global_position.y - objetivo_y) > 1.0:  # Mientras no esté cerca del objetivo
-		# Interpola la posición Y del torso
-		torso.global_position.y = lerp(torso.global_position.y, objetivo_y, velocidad)
-
-		# Mantén la posición X del torso a la misma distancia de la mano
-		torso.global_position.x = manoIzq.global_position.x + diferencia_x
-
-		# Mantén la mano en su posición Y inicial
-		manoIzq.global_position.y = posicionY
-
-		# Espera al siguiente frame
-		await get_tree().process_frame
-
-	# Asegura que el torso esté en su posición final
-	torso.global_position.y = objetivo_y
-	torso.global_position.x = manoIzq.global_position.x + diferencia_x
-	manoIzq.global_position.y = posicionY
-	print("Subida completada")
-
-
-
-
-
-
 	
+	#si el brazo se podia mover y le digo que se bloquee, emito señal de agarrado
+	if can_move and not mover:
+		agarrado.emit()
+	
+	#hago lo contrario
+	if not can_move and mover:
+		soltado.emit()
+		
+	can_move = mover
+		
