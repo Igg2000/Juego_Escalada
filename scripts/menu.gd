@@ -11,7 +11,7 @@ func _on_tiempo_button_pressed() -> void:
 
 
 func _on_altura_button_pressed() -> void:
-	print("Este boton deberia llevar al segundo nivel")
+	get_tree().change_scene_to_file("res://scenes/mapa2.tscn")
 
 
 func _on_creadores_button_pressed() -> void:
