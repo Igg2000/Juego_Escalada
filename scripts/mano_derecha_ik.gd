@@ -5,9 +5,13 @@ extends Node2D
 @export var return_speed: float = 1.5  # Velocidad de regreso más fluida
 @export var hang_distance: float = 150.0  # Cuánto cuelga el brazo
 
+@onready var sprite: AnimatedSprite2D
+
 var initial_position: Vector2  
 var initial_rotation: float
-@export var can_move: bool = true   
+@export var can_move: bool = true
+var can_grab: bool = false
+   
 
 signal agarrado
 signal soltado
@@ -15,8 +19,14 @@ signal soltado
 func _ready():
 	initial_position = position  
 	initial_rotation = rotation  
+	sprite = get_parent().get_parent().get_node("base/AntebrazoDc")
 
 func _process(delta):
+	if Input.is_action_just_released("agarre_derecho"):
+		sprite.frame = 0 #textura agarrado
+		set_can_move(true)
+		
+		
 	if !can_move:
 		return
 	else:
@@ -32,6 +42,11 @@ func _process(delta):
 			direction.x -= 1
 		elif Input.is_key_pressed(KEY_L):
 			direction.x += 1
+						
+		if Input.is_action_pressed("agarre_derecho") && can_grab:
+			if sprite.frame == 0:
+				sprite.frame = 1 #textura mano abierta
+			set_can_move(false)
 
 		# Movimiento restringido con límite en X
 		var new_position = position + direction.normalized() * speed * delta
@@ -56,3 +71,12 @@ func set_can_move(mover):
 		
 	can_move = mover
 	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Rock"):
+		can_grab = true
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	if area.is_in_group("Rock"):
+		can_grab = false

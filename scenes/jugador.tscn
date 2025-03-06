@@ -1,15 +1,45 @@
-[gd_scene load_steps=17 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=21 format=3 uid="uid://bofke32sctxnq"]
 
 [ext_resource type="Script" path="res://scripts/jugador.gd" id="1_ibhag"]
 [ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="1_lu4vh"]
 [ext_resource type="Script" path="res://scripts/mano_derecha_ik.gd" id="2_2j5uy"]
 [ext_resource type="Texture2D" uid="uid://bsqlgw6wp6vy5" path="res://assets/character/antebrazoIA_v2.png" id="2_g37r3"]
 [ext_resource type="Texture2D" uid="uid://b2ac7xhvx30ah" path="res://assets/character/brazoD.png" id="3_5343f"]
+[ext_resource type="Texture2D" uid="uid://cdr4qiff2xyyl" path="res://assets/character/antebrazoDC.png" id="3_kv5ig"]
 [ext_resource type="Script" path="res://scripts/mano_izquierda_ik.gd" id="3_swlmf"]
 [ext_resource type="Texture2D" uid="uid://v5yc8wfd0tcn" path="res://assets/character/brazoI.png" id="4_l3mph"]
+[ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="5_8j4u5"]
 [ext_resource type="Texture2D" uid="uid://dpn2spm04r5pg" path="res://assets/character/posNormal.png" id="5_28xov"]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_gelso"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lu4vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kv5ig")
+}],
+"loop": true,
+"name": &"agarre",
+"speed": 1.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ep8sc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb7of"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g37r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8j4u5")
+}],
+"loop": true,
+"name": &"agarre",
+"speed": 1.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o418e"]
 radius = 8.97632
@@ -105,11 +135,13 @@ script = ExtResource("1_ibhag")
 
 [node name="base" type="Node2D" parent="."]
 
-[node name="AntebrazoDc" type="Sprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.061, -52.5255)
-rotation = 0.0402863
+[node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
+position = Vector2(73.0603, -52.5256)
+rotation = 0.0403124
 scale = Vector2(0.349745, 0.349745)
-texture = ExtResource("1_lu4vh")
+sprite_frames = SubResource("SpriteFrames_gelso")
+animation = &"agarre"
+frame_progress = 0.241292
 
 [node name="Area2D" type="Area2D" parent="base/AntebrazoDc" groups=["AntebrazoDc"]]
 collision_layer = 2
@@ -119,11 +151,13 @@ position = Vector2(9.42544, -116.2)
 scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_ep8sc")
 
-[node name="AntebrazoIc" type="Sprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.138, -57.5363)
-rotation = 0.0093019
-scale = Vector2(0.350067, 0.350067)
-texture = ExtResource("2_g37r3")
+[node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
+position = Vector2(-70.1416, -57.5358)
+rotation = 0.00948191
+scale = Vector2(0.350074, 0.350074)
+sprite_frames = SubResource("SpriteFrames_nb7of")
+animation = &"agarre"
+frame_progress = 0.508256
 
 [node name="Area2D" type="Area2D" parent="base/AntebrazoIc" groups=["AntebrazoIc"]]
 collision_layer = 2
@@ -134,15 +168,15 @@ scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_o418e")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2343, -14.7115)
-rotation = 1.49705
+position = Vector2(44.1198, -14.7218)
+rotation = 1.49727
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8333, -18.1966)
-rotation = -1.50377
-scale = Vector2(0.349953, 0.349953)
+position = Vector2(-40.9493, -18.2197)
+rotation = -1.50438
+scale = Vector2(0.349954, 0.349954)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
@@ -294,6 +328,10 @@ position = Vector2(25.9775, 105.458)
 position = Vector2(-44, 121)
 shape = SubResource("SegmentShape2D_837uf")
 
+[connection signal="area_entered" from="base/AntebrazoDc/Area2D" to="IK/manoDerechaIK" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="base/AntebrazoDc/Area2D" to="IK/manoDerechaIK" method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="base/AntebrazoIc/Area2D" to="IK/manoIzquierdaIK" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="base/AntebrazoIc/Area2D" to="IK/manoIzquierdaIK" method="_on_area_2d_area_exited"]
 [connection signal="agarrado" from="IK/manoDerechaIK" to="." method="_on_mano_derecha_ik_agarrado"]
 [connection signal="soltado" from="IK/manoDerechaIK" to="." method="_on_mano_derecha_ik_soltado"]
 [connection signal="agarrado" from="IK/manoIzquierdaIK" to="." method="_on_mano_izquierda_ik_agarrado"]
