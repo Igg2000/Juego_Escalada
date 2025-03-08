@@ -9,10 +9,10 @@
 [ext_resource type="Script" path="res://scripts/mano_izquierda_ik.gd" id="3_swlmf"]
 [ext_resource type="Texture2D" uid="uid://v5yc8wfd0tcn" path="res://assets/character/brazoI.png" id="4_l3mph"]
 [ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="5_8j4u5"]
-[ext_resource type="Texture2D" uid="uid://dpn2spm04r5pg" path="res://assets/character/posNormal.png" id="5_28xov"]
 [ext_resource type="Texture2D" uid="uid://cm4gx7wadrerp" path="res://assets/stamina/stamina_vacia.png" id="7_0s7uk"]
 [ext_resource type="Texture2D" uid="uid://bbtygws0bb8f7" path="res://assets/stamina/stamina_llena.png" id="8_6fdue"]
 [ext_resource type="Texture2D" uid="uid://ci5hg2243axae" path="res://assets/character/crosshair.png" id="10_msfkd"]
+[ext_resource type="Texture2D" uid="uid://coobf3xnha3j4" path="res://assets/character/posNormal_2.png" id="10_uq7na"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gelso"]
 animations = [{
@@ -140,9 +140,9 @@ script = ExtResource("1_ibhag")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(72.964, -52.5451)
-rotation = 0.0441687
-scale = Vector2(0.34974, 0.34974)
+position = Vector2(73.0552, -52.5268)
+rotation = 0.0405185
+scale = Vector2(0.349743, 0.349743)
 sprite_frames = SubResource("SpriteFrames_gelso")
 animation = &"agarre"
 frame_progress = 0.241292
@@ -176,9 +176,9 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.1738, -57.5343)
-rotation = 0.011089
-scale = Vector2(0.350075, 0.350075)
+position = Vector2(-70.1418, -57.5357)
+rotation = 0.00949013
+scale = Vector2(0.350074, 0.350074)
 sprite_frames = SubResource("SpriteFrames_nb7of")
 animation = &"agarre"
 frame_progress = 0.508256
@@ -213,22 +213,23 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(43.9669, -14.7611)
-rotation = 1.498
-scale = Vector2(0.349946, 0.349946)
+position = Vector2(44.2179, -14.7179)
+rotation = 1.49715
+scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-41.0214, -18.2801)
-rotation = -1.50528
-scale = Vector2(0.349954, 0.349954)
+position = Vector2(-40.85, -18.2014)
+rotation = -1.50392
+scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
+texture_filter = 1
 position = Vector2(-4.02253, 45.4579)
 rotation = -0.000400066
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("5_28xov")
+texture = ExtResource("10_uq7na")
 
 [node name="Skeleton2D" type="Skeleton2D" parent="."]
 modification_stack = SubResource("SkeletonModificationStack2D_mxd1t")
