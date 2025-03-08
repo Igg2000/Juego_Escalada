@@ -15,4 +15,4 @@ func _on_altura_button_pressed() -> void:
 
 
 func _on_creadores_button_pressed() -> void:
-	print("Este boton deberia llevar a los creditos")
+	get_tree().change_scene_to_file("res://scenes/creditos.tscn")
