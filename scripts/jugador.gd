@@ -9,16 +9,21 @@ var mano_derecha_agarrada = false
 var mono_debe_subir = false
 var velocidad_movimiento = 150.0
 var distancia_a_recorrer = 40.0
+var posicion_objetivo
 
 #guardo las posiciones de los ik para que no se muevan junto con el cuerpo
 @onready var posManoDerecha = $IK/manoDerechaIK.global_position
 @onready var posManoIzquierda = $IK/manoIzquierdaIK.global_position
 		
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	
 	if mono_debe_subir:
 		hay_gravedad = false
+		
+		# Calcular dirección hacia el objetivo cada frame
+		var direccion = (posicion_objetivo - global_position).normalized()
+		velocity = direccion * velocidad_movimiento
 		
 		#me muevo mientras reestablezco las posiciones de los ik
 		move_and_slide()
@@ -39,18 +44,20 @@ func _process(delta: float) -> void:
 func _on_mano_izquierda_ik_agarrado() -> void:
 	print("mano izquierda agarrada")
 	
-	velocity = Vector2.UP * velocidad_movimiento
+	#velocity = Vector2.UP * velocidad_movimiento
 	mano_izquierda_agarrada = true
 	mono_debe_subir = true
 	posManoIzquierda = $IK/manoIzquierdaIK.global_position
+	posicion_objetivo = posManoIzquierda
 	
 func _on_mano_derecha_ik_agarrado() -> void:
 	print("mano derecha agarrada")
 	
-	velocity = Vector2.UP * velocidad_movimiento
+	#velocity = Vector2.UP * velocidad_movimiento
 	mano_derecha_agarrada = true
 	mono_debe_subir = true
 	posManoDerecha = $IK/manoDerechaIK.global_position
+	posicion_objetivo= posManoDerecha
 
 func _on_mano_derecha_ik_soltado() -> void:
 	print("mano derecha soltada")
