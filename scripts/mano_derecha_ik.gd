@@ -2,6 +2,7 @@ extends Node2D
 
 @export var speed: float = 200.0  # Velocidad de movimiento
 @export var x_limit: float = 100.0  # Límite de movimiento en X
+@export var y_limit: float = 150.0  # Límite de movimiento en Y
 @export var return_speed: float = 1.5  # Velocidad de regreso más fluida
 @export var hang_distance: float = 150.0  # Cuánto cuelga el brazo
 
@@ -51,6 +52,8 @@ func _process(delta):
 		# Movimiento restringido con límite en X
 		var new_position = position + direction.normalized() * speed * delta
 		new_position.x = clamp(new_position.x, initial_position.x - x_limit, initial_position.x + x_limit)  
+		new_position.y = clamp(new_position.y, initial_position.y - y_limit, initial_position.y + y_limit)  
+		
 		position = new_position
 
 		# Regreso progresivo cuando no hay input
