@@ -13,6 +13,10 @@ var initial_rotation: float
 @export var can_move: bool = true
 var can_grab: bool = false
    
+@onready var timer: Timer
+@onready var timer_cd: Timer
+var en_cooldown = false
+@onready var rueda_stamina: TextureProgressBar
 
 signal agarrado
 signal soltado
@@ -21,14 +25,25 @@ func _ready():
 	initial_position = position  
 	initial_rotation = rotation  
 	sprite = get_parent().get_parent().get_node("base/AntebrazoDc")
-
+	timer = get_parent().get_parent().get_node("base/AntebrazoDc/TiempoColgado")
+	timer_cd = get_parent().get_parent().get_node("base/AntebrazoDc/Cooldown")
+	rueda_stamina = get_parent().get_parent().get_node("base/AntebrazoDc/RuedaStamina")
+	
 func _process(delta):
+	
 	if Input.is_action_just_released("agarre_derecho"):
 		sprite.frame = 0 #textura agarrado
 		set_can_move(true)
 		
+	#Esta es la logica para la rueda de stamina del mono
+	if timer.time_left > 0 and !can_move:
+		timer.time_left
+		rueda_stamina.value = timer.time_left
+		rueda_stamina.show()
+	else:
+		rueda_stamina.hide()
 		
-	if !can_move:
+	if !can_move or en_cooldown:
 		return
 	else:
 		var direction = Vector2.ZERO
@@ -66,6 +81,7 @@ func set_can_move(mover):
 	#si el brazo se podia mover y le digo que se bloquee, emito señal de agarrado
 	if can_move and not mover:
 		agarrado.emit()
+		timer.start()
 	
 	#hago lo contrario
 	if not can_move and mover:
@@ -83,3 +99,14 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("Rock"):
 		can_grab = false
+
+func _on_timer_timeout() -> void:
+	sprite.frame = 0 #textura abierta
+	set_can_move(true)
+	timer_cd.start()
+	en_cooldown = true
+	can_grab= false
+
+
+func _on_cooldown_timeout() -> void:
+	en_cooldown = false

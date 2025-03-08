@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=24 format=3 uid="uid://bofke32sctxnq"]
 
 [ext_resource type="Script" path="res://scripts/jugador.gd" id="1_ibhag"]
 [ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="1_lu4vh"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://v5yc8wfd0tcn" path="res://assets/character/brazoI.png" id="4_l3mph"]
 [ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="5_8j4u5"]
 [ext_resource type="Texture2D" uid="uid://dpn2spm04r5pg" path="res://assets/character/posNormal.png" id="5_28xov"]
+[ext_resource type="Texture2D" uid="uid://cm4gx7wadrerp" path="res://assets/stamina/stamina_vacia.png" id="7_0s7uk"]
+[ext_resource type="Texture2D" uid="uid://bbtygws0bb8f7" path="res://assets/stamina/stamina_llena.png" id="8_6fdue"]
 [ext_resource type="Texture2D" uid="uid://ci5hg2243axae" path="res://assets/character/crosshair.png" id="10_msfkd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gelso"]
@@ -138,9 +140,9 @@ script = ExtResource("1_ibhag")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.0576, -52.5261)
-rotation = 0.0404216
-scale = Vector2(0.349745, 0.349745)
+position = Vector2(72.964, -52.5451)
+rotation = 0.0441687
+scale = Vector2(0.34974, 0.34974)
 sprite_frames = SubResource("SpriteFrames_gelso")
 animation = &"agarre"
 frame_progress = 0.241292
@@ -153,10 +155,30 @@ position = Vector2(9.42544, -116.2)
 scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_ep8sc")
 
+[node name="TiempoColgado" type="Timer" parent="base/AntebrazoDc"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="base/AntebrazoDc"]
+one_shot = true
+
+[node name="RuedaStamina" type="TextureProgressBar" parent="base/AntebrazoDc"]
+visible = false
+offset_left = -113.068
+offset_top = -197.215
+offset_right = 601.932
+offset_bottom = 512.785
+scale = Vector2(0.3, 0.3)
+max_value = 5.0
+step = 0.001
+fill_mode = 4
+texture_under = ExtResource("7_0s7uk")
+texture_progress = ExtResource("8_6fdue")
+
 [node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.1399, -57.5358)
-rotation = 0.00939727
-scale = Vector2(0.350074, 0.350074)
+position = Vector2(-70.1738, -57.5343)
+rotation = 0.011089
+scale = Vector2(0.350075, 0.350075)
 sprite_frames = SubResource("SpriteFrames_nb7of")
 animation = &"agarre"
 frame_progress = 0.508256
@@ -170,16 +192,36 @@ position = Vector2(-9.09663, -95.5063)
 scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_o418e")
 
+[node name="TiempoColgado" type="Timer" parent="base/AntebrazoIc"]
+wait_time = 5.0
+one_shot = true
+
+[node name="Cooldown" type="Timer" parent="base/AntebrazoIc"]
+one_shot = true
+
+[node name="RuedaStamina" type="TextureProgressBar" parent="base/AntebrazoIc"]
+visible = false
+offset_left = -113.068
+offset_top = -197.215
+offset_right = 601.932
+offset_bottom = 512.785
+scale = Vector2(0.3, 0.3)
+max_value = 5.0
+step = 0.001
+fill_mode = 4
+texture_under = ExtResource("7_0s7uk")
+texture_progress = ExtResource("8_6fdue")
+
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2236, -14.7156)
-rotation = 1.49712
-scale = Vector2(0.349945, 0.349945)
+position = Vector2(43.9669, -14.7611)
+rotation = 1.498
+scale = Vector2(0.349946, 0.349946)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8442, -18.1993)
-rotation = -1.50386
-scale = Vector2(0.349953, 0.349953)
+position = Vector2(-41.0214, -18.2801)
+rotation = -1.50528
+scale = Vector2(0.349954, 0.349954)
 texture = ExtResource("4_l3mph")
 
 [node name="TorsoNormal" type="Sprite2D" parent="base"]
@@ -343,8 +385,12 @@ shape = SubResource("SegmentShape2D_837uf")
 
 [connection signal="area_entered" from="base/AntebrazoDc/Area2D" to="IK/manoDerechaIK" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="base/AntebrazoDc/Area2D" to="IK/manoDerechaIK" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="base/AntebrazoDc/TiempoColgado" to="IK/manoDerechaIK" method="_on_timer_timeout"]
+[connection signal="timeout" from="base/AntebrazoDc/Cooldown" to="IK/manoDerechaIK" method="_on_cooldown_timeout"]
 [connection signal="area_entered" from="base/AntebrazoIc/Area2D" to="IK/manoIzquierdaIK" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="base/AntebrazoIc/Area2D" to="IK/manoIzquierdaIK" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="base/AntebrazoIc/TiempoColgado" to="IK/manoIzquierdaIK" method="_on_timer_timeout"]
+[connection signal="timeout" from="base/AntebrazoIc/Cooldown" to="IK/manoIzquierdaIK" method="_on_cooldown_timeout"]
 [connection signal="agarrado" from="IK/manoDerechaIK" to="." method="_on_mano_derecha_ik_agarrado"]
 [connection signal="soltado" from="IK/manoDerechaIK" to="." method="_on_mano_derecha_ik_soltado"]
 [connection signal="agarrado" from="IK/manoIzquierdaIK" to="." method="_on_mano_izquierda_ik_agarrado"]
