@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bofke32sctxnq"]
+[gd_scene load_steps=23 format=3 uid="uid://bofke32sctxnq"]
 
 [ext_resource type="Script" path="res://scripts/jugador.gd" id="1_ibhag"]
 [ext_resource type="Texture2D" uid="uid://yvakmfb0gvqd" path="res://assets/character/antebrazoDA_v2.png" id="1_lu4vh"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://v5yc8wfd0tcn" path="res://assets/character/brazoI.png" id="4_l3mph"]
 [ext_resource type="Texture2D" uid="uid://cxvgfa0bxuf04" path="res://assets/character/antebrazoIC.png" id="5_8j4u5"]
 [ext_resource type="Texture2D" uid="uid://dpn2spm04r5pg" path="res://assets/character/posNormal.png" id="5_28xov"]
+[ext_resource type="Texture2D" uid="uid://ci5hg2243axae" path="res://assets/character/crosshair.png" id="10_msfkd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gelso"]
 animations = [{
@@ -42,7 +43,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o418e"]
-radius = 8.97632
+radius = 9.78988
+height = 30.9945
 
 [sub_resource type="SkeletonModification2DCCDIK" id="SkeletonModification2DCCDIK_7s41x"]
 target_nodepath = NodePath("../IK/manoDerechaIK")
@@ -126,6 +128,9 @@ modifications/1 = SubResource("SkeletonModification2DCCDIK_k6lba")
 modifications/2 = SubResource("SkeletonModification2DCCDIK_ga7cg")
 modifications/3 = SubResource("SkeletonModification2DCCDIK_tr1br")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wykq3"]
+radius = 3.39317
+
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_837uf"]
 b = Vector2(91, 0)
 
@@ -136,9 +141,9 @@ script = ExtResource("1_ibhag")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.0552, -52.5268)
-rotation = 0.0405187
-scale = Vector2(0.349743, 0.349743)
+position = Vector2(73.061, -52.5255)
+rotation = 0.0402867
+scale = Vector2(0.349745, 0.349745)
 sprite_frames = SubResource("SpriteFrames_gelso")
 animation = &"agarre"
 frame_progress = 0.241292
@@ -152,14 +157,15 @@ scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_ep8sc")
 
 [node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.1418, -57.5357)
-rotation = 0.00948943
-scale = Vector2(0.350074, 0.350074)
+position = Vector2(-70.138, -57.5363)
+rotation = 0.009302
+scale = Vector2(0.350067, 0.350067)
 sprite_frames = SubResource("SpriteFrames_nb7of")
 animation = &"agarre"
 frame_progress = 0.508256
 
 [node name="Area2D" type="Area2D" parent="base/AntebrazoIc" groups=["AntebrazoIc"]]
+position = Vector2(0.492969, 1.52242)
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="base/AntebrazoIc/Area2D"]
@@ -168,14 +174,14 @@ scale = Vector2(3.50019, 3.50019)
 shape = SubResource("CapsuleShape2D_o418e")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.218, -14.7178)
-rotation = 1.49715
+position = Vector2(44.2341, -14.7116)
+rotation = 1.49705
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8499, -18.2013)
-rotation = -1.50391
+position = Vector2(-40.8335, -18.1966)
+rotation = -1.50377
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
@@ -317,6 +323,16 @@ script = ExtResource("2_2j5uy")
 [node name="manoIzquierdaIK" type="Node2D" parent="IK"]
 position = Vector2(-71.0225, -77.5421)
 script = ExtResource("3_swlmf")
+
+[node name="Sprite2D" type="Sprite2D" parent="IK/manoIzquierdaIK"]
+position = Vector2(0.0224972, -0.457904)
+scale = Vector2(0.00413865, 0.00419447)
+texture = ExtResource("10_msfkd")
+
+[node name="Area2D" type="Area2D" parent="IK/manoIzquierdaIK"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IK/manoIzquierdaIK/Area2D"]
+shape = SubResource("CircleShape2D_wykq3")
 
 [node name="pieIzquierdoIK" type="Node2D" parent="IK"]
 position = Vector2(-21.0225, 103.458)

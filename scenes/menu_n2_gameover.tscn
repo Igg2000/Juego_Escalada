@@ -40,6 +40,7 @@ shadow_offset = Vector2(0, 3)
 script = ExtResource("1_q01pj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 offset_left = 232.0
 offset_top = 88.0
 offset_right = 890.0
@@ -69,6 +70,7 @@ theme_override_font_sizes/font_size = 35
 text = "Altura: "
 
 [node name="X_Metros" type="Label" parent="Altura_n2"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 2.0
 offset_right = 450.0
@@ -91,6 +93,7 @@ theme_override_font_sizes/font_size = 35
 text = "Record Time: "
 
 [node name="Y_Metros" type="Label" parent="HighScore_n2"]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 2.0
 offset_right = 450.0

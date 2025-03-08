@@ -3,9 +3,10 @@ extends Node2D
 @export var speed: float = 200.0  # Velocidad de movimiento
 @export var x_limit: float = 100.0  # Límite de movimiento en X
 @export var return_speed: float = 1.5  # Velocidad de regreso más fluida
-@export var hang_distance: float = 150.0  # Cuánto cuelga el brazo
+@export var hang_distance: float = 160.0  # Cuánto cuelga el brazo
 
 @onready var sprite: AnimatedSprite2D
+@onready var AreaMano = Area2D
 
 var initial_position: Vector2  
 var initial_rotation: float  
@@ -20,6 +21,7 @@ func _ready():
 	initial_position = position  
 	initial_rotation = rotation  
 	sprite = get_parent().get_parent().get_node("base/AntebrazoIc")
+	AreaMano = get_parent().get_parent().get_node("base/AntebrazoIc/Area2D")
 
 func _process(delta):
 	
@@ -52,12 +54,22 @@ func _process(delta):
 		# Movimiento restringido con límite en X
 		var new_position = position + direction.normalized() * speed * delta
 		new_position.x = clamp(new_position.x, initial_position.x - x_limit, initial_position.x + x_limit)  
+		
+		#COMENTAR ESTO SI QUIERES QUE NO SE SALGA DEL AREA2D Y DESCOMENTAR EL IF DE ABAJO
 		position = new_position
+		
+		#ESTO ES PARA QUE NO SE SALGA DEL AREA 2D
+		"""
+		if AreaMano.overlaps_area($Area2D):  #Accedemos al Area2D dentro de manoIzquierda
+			position = new_position
+		"""
 
+		#"""
 		# Regreso progresivo cuando no hay input
 		if direction == Vector2.ZERO:
 			position = position.lerp(initial_position + Vector2(0, hang_distance), return_speed * delta)
 			rotation = lerp_angle(rotation, deg_to_rad(90), return_speed * delta)
+		#"""
 
 func set_can_move(mover):
 	
