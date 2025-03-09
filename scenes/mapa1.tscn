@@ -3744,6 +3744,7 @@ bbcode_enabled = true
 text = "00"
 
 [node name="PantallaVictoria" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="PantallaVictoria"]
 texture_filter = 1

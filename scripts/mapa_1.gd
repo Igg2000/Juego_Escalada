@@ -33,7 +33,7 @@ func _on_jugador_ha_llegado_a_meta() -> void:
 	#Establezco el record del nivel
 	$PantallaVictoria/HighScore_n1/Tiempo_n1.text = str(record_maximo)+" segundos"
 	
-	if record_actual >= record_maximo:
+	if record_actual < record_maximo:
 		_guardar_record()
 		$PantallaVictoria/nuevo_record.show()
 	
@@ -46,7 +46,7 @@ func _cargar_record():
 	if cargar_partida != null:
 		record_maximo = cargar_partida.get_32()
 	else:
-		record_actual = 0
+		record_actual = tiempo_del_nivel
 		_guardar_record()
 	
 	
