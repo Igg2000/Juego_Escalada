@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2.ZERO
 			distancia_a_recorrer = 40.0
 			mono_debe_subir=false
+			$IK/manoDerechaIK.global_position = posManoDerecha
+			$IK/manoIzquierdaIK.global_position = posManoIzquierda
 
 	if hay_gravedad:
 		velocity.y += gravedad * delta
@@ -48,6 +50,7 @@ func _on_mano_izquierda_ik_agarrado() -> void:
 	mano_izquierda_agarrada = true
 	mono_debe_subir = true
 	posManoIzquierda = $IK/manoIzquierdaIK.global_position
+	posManoDerecha = $IK/manoDerechaIK.global_position
 	posicion_objetivo = posManoIzquierda
 	
 func _on_mano_derecha_ik_agarrado() -> void:
@@ -57,6 +60,7 @@ func _on_mano_derecha_ik_agarrado() -> void:
 	mano_derecha_agarrada = true
 	mono_debe_subir = true
 	posManoDerecha = $IK/manoDerechaIK.global_position
+	posManoIzquierda = $IK/manoIzquierdaIK.global_position
 	posicion_objetivo= posManoDerecha
 
 func _on_mano_derecha_ik_soltado() -> void:
