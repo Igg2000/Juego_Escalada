@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=27 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
 [ext_resource type="Script" path="res://scripts/mapa_1.gd" id="1_l8ao4"]
@@ -14,7 +14,9 @@
 [ext_resource type="Script" path="res://scenes/car_spawner.gd" id="10_74f4v"]
 [ext_resource type="Texture2D" uid="uid://ceqdqo7uyq4uh" path="res://assets/menu/GUI.png" id="12_6u0my"]
 [ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="13_jlhtj"]
+[ext_resource type="Texture2D" uid="uid://dh4fblv1uv0kc" path="res://assets/sandwatch/reloj_de_arena4.png" id="14_ai5ty"]
 [ext_resource type="Texture2D" uid="uid://bcqd51jcllf00" path="res://assets/rocas/Pixel Art Rock Pile Pack/Rock Pile - ORANGE -/Rock Pile 13 - ORANGE - BIG.PNG" id="15_0g7gw"]
+[ext_resource type="Texture2D" uid="uid://d12jtvbme5oda" path="res://assets/sandwatch/reloj_de_arena1.png" id="15_lxw7n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohd0v"]
 texture = ExtResource("1_sd52k")
@@ -3734,14 +3736,26 @@ one_shot = true
 layer = 5
 
 [node name="tiempo" type="RichTextLabel" parent="Timer/CanvasLayer"]
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 170.0
-offset_bottom = 80.0
+offset_left = 96.0
+offset_top = 15.0
+offset_right = 296.0
+offset_bottom = 135.0
 theme_override_fonts/normal_font = ExtResource("13_jlhtj")
-theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/normal_font_size = 84
 bbcode_enabled = true
-text = "00"
+text = "000"
+
+[node name="RelojDeArena" type="TextureProgressBar" parent="Timer/CanvasLayer"]
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 743.0
+offset_bottom = 1030.0
+scale = Vector2(0.1, 0.1)
+min_value = -29.0
+max_value = 120.0
+fill_mode = 3
+texture_under = ExtResource("14_ai5ty")
+texture_progress = ExtResource("15_lxw7n")
 
 [node name="PantallaVictoria" type="CanvasLayer" parent="."]
 visible = false
