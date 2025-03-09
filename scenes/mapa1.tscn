@@ -3943,7 +3943,7 @@ script = ExtResource("18_2p3na")
 [node name="Area2D" type="Area2D" parent="MetaDePrueba"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MetaDePrueba/Area2D"]
-position = Vector2(1, 0)
+position = Vector2(-7.82217, 17.1455)
 shape = SubResource("RectangleShape2D_2ceec")
 
 [node name="PantallaDerrota" type="CanvasLayer" parent="."]
