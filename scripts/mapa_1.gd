@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var timer: Timer = $Timer
+@onready var tiempo: RichTextLabel = $Timer/CanvasLayer/tiempo
 @export var tiempo_del_nivel: int = 60
 var record_actual: int  = 0
 var record_maximo: int
@@ -14,10 +15,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	tiempo.text = str(int(timer.time_left))
+	if timer.time_left < 11:
+		tiempo.text = "[color=red]"+str(int(timer.time_left))+"[/color]"
+	else:
+		tiempo.text = str(int(timer.time_left))
 
 
 func _on_jugador_ha_llegado_a_meta() -> void:
+	timer.paused = true
 	#Muestro la pantalla de victoria
 	$PantallaVictoria.show()
 	#Establezco los segundos transcurridos
@@ -52,3 +58,7 @@ func _on_repetir_pressed() -> void:
 
 func _on_volver_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+
+
+func _on_timer_timeout() -> void:
+	$PantallaDerrota.show()

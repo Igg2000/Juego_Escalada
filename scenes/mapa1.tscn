@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=25 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
 [ext_resource type="Script" path="res://scripts/mapa_1.gd" id="1_l8ao4"]
@@ -3288,8 +3288,13 @@ shadow_offset = Vector2(0, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ceec"]
 size = Vector2(33, 20)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjxup"]
+atlas = ExtResource("12_6u0my")
+region = Rect2(2.12982, 32.715, 44.2875, 46.9208)
+
 [node name="Mapa1" type="Node2D"]
 script = ExtResource("1_l8ao4")
+tiempo_del_nivel = 120
 
 [node name="background2" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -3725,7 +3730,21 @@ position = Vector2(1284, 448)
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Timer"]
+layer = 5
+
+[node name="tiempo" type="RichTextLabel" parent="Timer/CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("13_jlhtj")
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "00"
+
 [node name="PantallaVictoria" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="PantallaVictoria"]
 texture_filter = 1
@@ -3863,6 +3882,86 @@ texture = ExtResource("15_0g7gw")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_2ceec")
 
+[node name="PantallaDerrota" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="PantallaDerrota"]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -542.0
+offset_top = -404.0
+offset_right = 116.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.68286, 1.76755)
+texture = SubResource("AtlasTexture_rjxup")
+
+[node name="gameover_n1" type="Label" parent="PantallaDerrota"]
+offset_left = 604.0
+offset_top = 280.0
+offset_right = 1349.0
+offset_bottom = 435.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.752396, 0.297879, 0.155693, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 128
+text = "Game Over"
+
+[node name="Tiempo_n1" type="Label" parent="PantallaDerrota"]
+offset_left = 576.0
+offset_top = 500.0
+offset_right = 1402.0
+offset_bottom = 578.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+text = "Se ha acabado el tiempo"
+
+[node name="repetir" type="Button" parent="PantallaDerrota"]
+offset_left = 602.0
+offset_top = 701.0
+offset_right = 1082.0
+offset_bottom = 801.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3un0b")
+text = "Repetir nivel"
+metadata/_edit_use_anchors_ = true
+
+[node name="volver" type="Button" parent="PantallaDerrota"]
+offset_left = 1103.0
+offset_top = 702.0
+offset_right = 1353.0
+offset_bottom = 802.0
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3un0b")
+text = "Volver"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="ha_llegado_a_meta" from="Jugador" to="." method="_on_jugador_ha_llegado_a_meta"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="PantallaVictoria/repetir" to="." method="_on_repetir_pressed"]
 [connection signal="pressed" from="PantallaVictoria/volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="PantallaDerrota/repetir" to="." method="_on_repetir_pressed"]
+[connection signal="pressed" from="PantallaDerrota/volver" to="." method="_on_volver_pressed"]
