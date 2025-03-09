@@ -36,92 +36,100 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3)
 
-[node name="MenuN1Enhorabuena" type="Node"]
+[node name="MenuN1Enhorabuena" type="CanvasLayer"]
 script = ExtResource("1_iatep")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
-offset_left = 232.0
-offset_top = 88.0
-offset_right = 890.0
-offset_bottom = 542.0
+offset_left = 224.0
+offset_top = 68.0
+offset_right = 1734.0
+offset_bottom = 966.0
+size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_2pppp")
+metadata/_edit_use_anchors_ = true
 
 [node name="gameover_n1" type="Label" parent="."]
-offset_left = 329.0
-offset_top = 157.0
-offset_right = 766.0
-offset_bottom = 248.0
+offset_left = 671.0
+offset_top = 247.0
+offset_right = 1260.0
+offset_bottom = 338.0
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0.549314, 0.452668, 0.12706, 1)
 theme_override_fonts/font = ExtResource("2_i04fd")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 64
 text = "¡¡Nivel Superado!!"
+metadata/_edit_use_anchors_ = true
 
 [node name="Tiempo_Y" type="Label" parent="."]
-offset_left = 470.0
-offset_top = 226.0
-offset_right = 656.0
-offset_bottom = 287.0
+offset_left = 794.0
+offset_top = 398.0
+offset_right = 1115.0
+offset_bottom = 476.0
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
 theme_override_fonts/font = ExtResource("2_i04fd")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 64
 text = "Tiempo Y"
+metadata/_edit_use_anchors_ = true
 
 [node name="HighScore_n1" type="Label" parent="."]
-offset_left = 358.0
-offset_top = 286.0
-offset_right = 612.0
-offset_bottom = 347.0
+offset_left = 530.0
+offset_top = 534.0
+offset_right = 995.0
+offset_bottom = 612.0
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
 theme_override_fonts/font = ExtResource("2_i04fd")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 64
 text = "Record Time: "
+metadata/_edit_use_anchors_ = true
 
 [node name="Tiempo_n1" type="Label" parent="HighScore_n1"]
 layout_mode = 0
-offset_left = 264.0
+offset_left = 478.0
 offset_top = 2.0
-offset_right = 450.0
-offset_bottom = 63.0
+offset_right = 728.0
+offset_bottom = 80.0
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
 theme_override_fonts/font = ExtResource("2_i04fd")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 64
 text = "Tiempo"
+metadata/_edit_use_anchors_ = true
 
 [node name="PlayAgainButton_n1" type="Button" parent="."]
-offset_left = 316.0
-offset_top = 388.0
-offset_right = 700.0
-offset_bottom = 478.0
+offset_left = 506.0
+offset_top = 714.0
+offset_right = 1234.0
+offset_bottom = 879.0
 scale = Vector2(0.614655, 0.606118)
 size_flags_horizontal = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_i04fd")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 128
 theme_override_styles/hover = SubResource("StyleBoxFlat_1addy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1addy")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oiufw")
 text = "Play Again"
+metadata/_edit_use_anchors_ = true
 
 [node name="HomeButton_n1" type="Button" parent="."]
-offset_left = 657.0
-offset_top = 390.0
-offset_right = 862.0
-offset_bottom = 478.0
+offset_left = 1109.0
+offset_top = 710.0
+offset_right = 1509.0
+offset_bottom = 875.0
 scale = Vector2(0.738272, 0.637809)
 size_flags_horizontal = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_i04fd")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 128
 theme_override_styles/hover = SubResource("StyleBoxFlat_1addy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1addy")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oiufw")
 text = "Home"
+metadata/_edit_use_anchors_ = true

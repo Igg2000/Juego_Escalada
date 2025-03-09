@@ -14,7 +14,8 @@ var posicion_objetivo
 #guardo las posiciones de los ik para que no se muevan junto con el cuerpo
 @onready var posManoDerecha = $IK/manoDerechaIK.global_position
 @onready var posManoIzquierda = $IK/manoIzquierdaIK.global_position
-		
+
+signal ha_llegado_a_meta	
 
 func _physics_process(delta: float) -> void:
 	
@@ -79,3 +80,7 @@ func _on_mano_izquierda_ik_soltado() -> void:
 	if not mano_derecha_agarrada:
 		mono_debe_subir = false
 		hay_gravedad = true
+
+
+func _on_meta_tocada() -> void:
+	ha_llegado_a_meta.emit()

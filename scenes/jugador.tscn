@@ -140,8 +140,8 @@ script = ExtResource("1_ibhag")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.0557, -52.5267)
-rotation = 0.0404989
+position = Vector2(73.0542, -52.527)
+rotation = 0.0405585
 scale = Vector2(0.349743, 0.349743)
 sprite_frames = SubResource("SpriteFrames_gelso")
 animation = &"agarre"
@@ -176,8 +176,8 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.1413, -57.5358)
-rotation = 0.00946749
+position = Vector2(-70.1428, -57.5357)
+rotation = 0.00954128
 scale = Vector2(0.350074, 0.350074)
 sprite_frames = SubResource("SpriteFrames_nb7of")
 animation = &"agarre"
@@ -213,14 +213,14 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2193, -14.7173)
-rotation = 1.49714
+position = Vector2(44.2148, -14.7191)
+rotation = 1.49718
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8485, -18.2009)
-rotation = -1.5039
+position = Vector2(-40.8532, -18.2026)
+rotation = -1.50394
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
@@ -392,6 +392,8 @@ shape = SubResource("SegmentShape2D_837uf")
 [connection signal="timeout" from="base/AntebrazoIc/TiempoColgado" to="IK/manoIzquierdaIK" method="_on_timer_timeout"]
 [connection signal="timeout" from="base/AntebrazoIc/Cooldown" to="IK/manoIzquierdaIK" method="_on_cooldown_timeout"]
 [connection signal="agarrado" from="IK/manoDerechaIK" to="." method="_on_mano_derecha_ik_agarrado"]
+[connection signal="meta_tocada" from="IK/manoDerechaIK" to="." method="_on_meta_tocada"]
 [connection signal="soltado" from="IK/manoDerechaIK" to="." method="_on_mano_derecha_ik_soltado"]
 [connection signal="agarrado" from="IK/manoIzquierdaIK" to="." method="_on_mano_izquierda_ik_agarrado"]
+[connection signal="meta_tocada" from="IK/manoIzquierdaIK" to="." method="_on_meta_tocada"]
 [connection signal="soltado" from="IK/manoIzquierdaIK" to="." method="_on_mano_izquierda_ik_soltado"]

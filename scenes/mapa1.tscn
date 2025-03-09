@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=24 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
+[ext_resource type="Script" path="res://scripts/mapa_1.gd" id="1_l8ao4"]
 [ext_resource type="Texture2D" uid="uid://m4fiwnyb07o4" path="res://assets/background/background2.png" id="1_qnejj"]
 [ext_resource type="Texture2D" uid="uid://ceqtxcmdgdyxa" path="res://assets/background/Skyscraper_Buildings _pack_OldNinjaCat_v1.png" id="1_sd52k"]
 [ext_resource type="Texture2D" uid="uid://bj2hhgcw86n0c" path="res://assets/tilemap/map_1.png" id="2_8swhn"]
@@ -11,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bboh3ann7f2ei" path="res://assets/background/crosswalk_pale.png" id="4_drdog"]
 [ext_resource type="PackedScene" uid="uid://cyxelpg8633hf" path="res://scenes/car.tscn" id="10_6cllo"]
 [ext_resource type="Script" path="res://scenes/car_spawner.gd" id="10_74f4v"]
+[ext_resource type="Texture2D" uid="uid://ceqdqo7uyq4uh" path="res://assets/menu/GUI.png" id="12_6u0my"]
+[ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="13_jlhtj"]
+[ext_resource type="Texture2D" uid="uid://bcqd51jcllf00" path="res://assets/rocas/Pixel Art Rock Pile Pack/Rock Pile - ORANGE -/Rock Pile 13 - ORANGE - BIG.PNG" id="15_0g7gw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohd0v"]
 texture = ExtResource("1_sd52k")
@@ -3249,7 +3253,43 @@ texture = ExtResource("2_8swhn")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_uiyvb")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wurd"]
+atlas = ExtResource("12_6u0my")
+region = Rect2(2.12982, 32.715, 44.2875, 46.9208)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrdtt"]
+bg_color = Color(0.666569, 0.666569, 0.666569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3un0b"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ceec"]
+size = Vector2(33, 20)
+
 [node name="Mapa1" type="Node2D"]
+script = ExtResource("1_l8ao4")
 
 [node name="background2" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -3681,3 +3721,148 @@ car_scene = ExtResource("10_6cllo")
 
 [node name="Car" parent="CarSpawner" instance=ExtResource("10_6cllo")]
 position = Vector2(1284, 448)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PantallaVictoria" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="PantallaVictoria"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.0
+offset_top = -25.0
+offset_right = 105.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.88, 1)
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_7wurd")
+
+[node name="nivel_superado" type="Label" parent="PantallaVictoria"]
+offset_left = 663.0
+offset_top = 155.0
+offset_right = 1252.0
+offset_bottom = 246.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.883791, 0.740434, 0.271841, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+text = "¡¡Nivel Superado!!"
+metadata/_edit_use_anchors_ = true
+
+[node name="nuevo_record" type="Label" parent="PantallaVictoria"]
+visible = false
+anchors_preset = -1
+anchor_top = -0.0712963
+anchor_right = 0.121875
+offset_left = 429.0
+offset_top = 319.0
+offset_right = 1302.0
+offset_bottom = 410.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 128
+text = "¡¡Nuevo Record!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Tiempo_Y" type="Label" parent="PantallaVictoria"]
+offset_left = 634.0
+offset_top = 431.0
+offset_right = 1317.0
+offset_bottom = 509.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+text = "Tiempo: 0 segundos"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScore_n1" type="Label" parent="PantallaVictoria"]
+anchors_preset = -1
+anchor_left = -0.10625
+anchor_bottom = 0.00185185
+offset_left = 487.0
+offset_top = 556.0
+offset_right = 1036.0
+offset_bottom = 634.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+text = "Tiempo Record: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Tiempo_n1" type="Label" parent="PantallaVictoria/HighScore_n1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371846
+anchor_top = -0.0249998
+anchor_right = 0.579448
+anchor_bottom = -0.0249998
+offset_left = 478.0
+offset_top = 2.0
+offset_right = 728.0
+offset_bottom = 80.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+text = "? segundos"
+metadata/_edit_use_anchors_ = true
+
+[node name="repetir" type="Button" parent="PantallaVictoria"]
+offset_left = 486.0
+offset_top = 739.0
+offset_right = 966.0
+offset_bottom = 839.0
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3un0b")
+text = "Repetir nivel"
+metadata/_edit_use_anchors_ = true
+
+[node name="volver" type="Button" parent="PantallaVictoria"]
+offset_left = 1109.0
+offset_top = 739.0
+offset_right = 1359.0
+offset_bottom = 839.0
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_jlhtj")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hrdtt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3un0b")
+text = "Volver"
+metadata/_edit_use_anchors_ = true
+
+[node name="MetaDePrueba" type="Sprite2D" parent="." groups=["Meta"]]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(460, 297)
+texture = ExtResource("15_0g7gw")
+
+[node name="Area2D" type="Area2D" parent="MetaDePrueba"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MetaDePrueba/Area2D"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_2ceec")
+
+[connection signal="ha_llegado_a_meta" from="Jugador" to="." method="_on_jugador_ha_llegado_a_meta"]
+[connection signal="pressed" from="PantallaVictoria/repetir" to="." method="_on_repetir_pressed"]
+[connection signal="pressed" from="PantallaVictoria/volver" to="." method="_on_volver_pressed"]
