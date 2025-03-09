@@ -1,31 +1,20 @@
 extends Node2D
 
-@onready var timer: Timer = $Timer
-@onready var tiempo: RichTextLabel = $Timer/CanvasLayer/tiempo
-@export var tiempo_del_nivel: int = 60
-var record_actual: int  = 0
-var record_maximo: int
-
+var altura_maxima
+var record_maximo
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.start(tiempo_del_nivel)
 	_cargar_record()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	tiempo.text = str(int(timer.time_left))
-	if timer.time_left < 11:
-		tiempo.text = "[color=red]"+str(int(timer.time_left))+"[/color]"
-	else:
-		tiempo.text = str(int(timer.time_left))
+	pass
+"""
 
-
-func _on_jugador_ha_llegado_a_meta() -> void:
-	timer.paused = true
-	#Muestro la pantalla de victoria
-	$PantallaVictoria.show()
+func _on_derrota() -> void:
+	
 	#Establezco los segundos transcurridos
 	var tiempo_transcurrido = tiempo_del_nivel - int(timer.time_left)
 	$PantallaVictoria/Tiempo_Y.text = "Tiempo: "+str(tiempo_transcurrido)+" segundos"
@@ -36,20 +25,32 @@ func _on_jugador_ha_llegado_a_meta() -> void:
 	if record_actual < record_maximo:
 		_guardar_record()
 		$PantallaVictoria/nuevo_record.show()
-	
+"""
+
 func _guardar_record():
-	var guardar_partida = FileAccess.open("user://save.recordTime", FileAccess.WRITE)
-	guardar_partida.store_32(record_actual)
+	var guardar_partida = FileAccess.open("user://save.recordHigh", FileAccess.WRITE)
+	guardar_partida.store_32(int(altura_maxima))
 	
 func _cargar_record():
-	var cargar_partida = FileAccess.open("user://save.recordTime", FileAccess.READ)
+	var cargar_partida = FileAccess.open("user://save.recordHigh", FileAccess.READ)
 	if cargar_partida != null:
 		record_maximo = cargar_partida.get_32()
 	else:
-		record_maximo = tiempo_del_nivel
+		record_maximo = 0
 		_guardar_record()
 	
+
+# la altura se gestiona en el script del label de la altura,
+# cuando cae x metros, se envia esta señal
+func _on_label_ha_perdido(a:int) -> void:
+	$PantallaGameOver.show()
+	altura_maxima = a
+	$PantallaGameOver/altura.text = "Altura: "+str(altura_maxima) +" metros"
+	$PantallaGameOver/HighScore_n1/metros.text = str(record_maximo) +" metros"
 	
+	if altura_maxima>record_maximo:
+		_guardar_record()
+		$PantallaGameOver/nuevo_record.show()
 	
 
 func _on_repetir_pressed() -> void:
@@ -58,7 +59,3 @@ func _on_repetir_pressed() -> void:
 
 func _on_volver_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menu.tscn")
-
-
-func _on_timer_timeout() -> void:
-	$PantallaDerrota.show()

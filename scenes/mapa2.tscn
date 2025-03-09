@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=4 uid="uid://j41omslraca8"]
+[gd_scene load_steps=21 format=4 uid="uid://j41omslraca8"]
 
+[ext_resource type="Script" path="res://scripts/mapa_2.gd" id="1_2b6k2"]
 [ext_resource type="Script" path="res://scripts/fondoMapa2.gd" id="1_6jvbd"]
 [ext_resource type="Texture2D" uid="uid://bo3ulrenpyew" path="res://assets/background/map2.png" id="2_uud5k"]
 [ext_resource type="PackedScene" uid="uid://bofke32sctxnq" path="res://scenes/jugador.tscn" id="3_3y4np"]
@@ -11,6 +12,8 @@
 [ext_resource type="Script" path="res://scripts/salto.gd" id="8_rgx8d"]
 [ext_resource type="AudioStream" uid="uid://dkrl3o17uitoe" path="res://assets/musica/Monkey - Sound Effect.mp3" id="9_kxodj"]
 [ext_resource type="AudioStream" uid="uid://bqju1fwxjp00e" path="res://assets/musica/Jungle Monkeys.mp3" id="11_p3hwq"]
+[ext_resource type="Texture2D" uid="uid://ceqdqo7uyq4uh" path="res://assets/menu/GUI.png" id="12_xnxx6"]
+[ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="13_hvtph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48k6w"]
 texture = ExtResource("4_na6te")
@@ -526,7 +529,40 @@ sources/0 = SubResource("TileSetAtlasSource_48k6w")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xe0rr"]
 size = Vector2(406, 4452)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0ah1"]
+atlas = ExtResource("12_xnxx6")
+region = Rect2(2.12982, 32.715, 44.2875, 46.9208)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnfy1"]
+bg_color = Color(0.666569, 0.666569, 0.666569, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epd45"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.627451, 0.835294, 0.360784, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
 [node name="mapa2" type="Node2D"]
+script = ExtResource("1_2b6k2")
 
 [node name="fondo" type="ParallaxBackground" parent="."]
 script = ExtResource("1_6jvbd")
@@ -547,7 +583,7 @@ tile_map_data = PackedByteArray("AAAaACIAAAAGAAoAAAAaACMAAAAGAAsAAAAbACIAAAAHAAo
 tile_set = SubResource("TileSet_vy0mw")
 
 [node name="Jugador" parent="." instance=ExtResource("3_3y4np")]
-position = Vector2(577, 415)
+position = Vector2(577, 421)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 zoom = Vector2(1.5, 1.5)
@@ -594,3 +630,135 @@ jump_sound = NodePath("../Node2D/AudioStreamPlayer2D")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_p3hwq")
 autoplay = true
+
+[node name="PantallaGameOver" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="PantallaGameOver"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 255.0
+offset_top = 6.0
+offset_right = 255.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.738372, 0.933412)
+size_flags_horizontal = 3
+texture = SubResource("AtlasTexture_v0ah1")
+
+[node name="nivel_superado" type="Label" parent="PantallaGameOver"]
+offset_left = 663.0
+offset_top = 155.0
+offset_right = 1252.0
+offset_bottom = 246.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.883791, 0.740434, 0.271841, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 64
+text = "¡¡Nivel Superado!!"
+metadata/_edit_use_anchors_ = true
+
+[node name="nuevo_record" type="Label" parent="PantallaGameOver"]
+visible = false
+anchors_preset = -1
+anchor_top = -0.0712963
+anchor_right = 0.121875
+offset_left = 429.0
+offset_top = 319.0
+offset_right = 1302.0
+offset_bottom = 410.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 128
+text = "¡¡Nuevo Record!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="altura" type="Label" parent="PantallaGameOver"]
+offset_left = 685.0
+offset_top = 429.0
+offset_right = 1368.0
+offset_bottom = 507.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 64
+text = "Altura: 0 metros"
+metadata/_edit_use_anchors_ = true
+
+[node name="HighScore_n1" type="Label" parent="PantallaGameOver"]
+anchors_preset = -1
+anchor_left = -0.10625
+anchor_bottom = 0.00185185
+offset_left = 561.0
+offset_top = 549.0
+offset_right = 1110.0
+offset_bottom = 627.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 64
+text = "Record de altura: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="metros" type="Label" parent="PantallaGameOver/HighScore_n1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371846
+anchor_top = -0.0249998
+anchor_right = 0.579448
+anchor_bottom = -0.0249998
+offset_left = 478.0
+offset_top = 2.0
+offset_right = 728.0
+offset_bottom = 80.0
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 64
+text = "? metros"
+metadata/_edit_use_anchors_ = true
+
+[node name="repetir" type="Button" parent="PantallaGameOver"]
+offset_left = 486.0
+offset_top = 739.0
+offset_right = 966.0
+offset_bottom = 839.0
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_mnfy1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mnfy1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_epd45")
+text = "Repetir nivel"
+metadata/_edit_use_anchors_ = true
+
+[node name="volver" type="Button" parent="PantallaGameOver"]
+offset_left = 1109.0
+offset_top = 739.0
+offset_right = 1359.0
+offset_bottom = 839.0
+size_flags_horizontal = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("13_hvtph")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_mnfy1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mnfy1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_epd45")
+text = "Volver"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="ha_perdido" from="CanvasLayer/Label" to="." method="_on_label_ha_perdido"]
+[connection signal="pressed" from="PantallaGameOver/repetir" to="." method="_on_repetir_pressed"]
+[connection signal="pressed" from="PantallaGameOver/volver" to="." method="_on_volver_pressed"]
