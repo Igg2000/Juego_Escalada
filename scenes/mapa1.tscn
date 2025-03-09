@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bbjq4m3pe641"]
 
-[ext_resource type="Texture2D" uid="uid://d0haw84hkwa8s" path="res://assets/background/6.png" id="1_5gvdt"]
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
+[ext_resource type="Texture2D" uid="uid://m4fiwnyb07o4" path="res://assets/background/background2.png" id="1_qnejj"]
 [ext_resource type="Texture2D" uid="uid://ceqtxcmdgdyxa" path="res://assets/background/Skyscraper_Buildings _pack_OldNinjaCat_v1.png" id="1_sd52k"]
 [ext_resource type="Texture2D" uid="uid://bj2hhgcw86n0c" path="res://assets/tilemap/map_1.png" id="2_8swhn"]
 [ext_resource type="Texture2D" uid="uid://blpxvtqk43e07" path="res://assets/background/road_pale.png" id="2_qej85"]
@@ -3255,12 +3255,11 @@ sources/0 = SubResource("TileSetAtlasSource_uiyvb")
 texture_filter = 1
 position = Vector2(296, -1186)
 scale = Vector2(10, 10)
-texture = ExtResource("1_5gvdt")
+texture = ExtResource("1_qnejj")
 
 [node name="Tile_Ciudad" type="TileMap" parent="background2"]
 texture_filter = 1
 position = Vector2(26.1, 66.1)
-scale = Vector2(1, 1)
 tile_set = SubResource("TileSet_cf7hr")
 format = 2
 layer_1/name = "Layer1"
@@ -3673,7 +3672,7 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 position = Vector2(21.3333, 8)
-zoom = Vector2(0.9, 0.9)
+zoom = Vector2(1.5, 1.5)
 limit_bottom = 645
 
 [node name="CarSpawner" type="Node2D" parent="."]

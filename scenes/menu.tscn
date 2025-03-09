@@ -100,10 +100,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -223.0
-offset_right = 400.0
-offset_bottom = 223.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -111,10 +111,11 @@ alignment = 1
 
 [node name="NombreJuego" type="Label" parent="VBoxMenu"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
 theme_override_fonts/font = ExtResource("3_g0byh")
-theme_override_font_sizes/font_size = 90
+theme_override_font_sizes/font_size = 128
 text = "Jota the Climber"
 
 [node name="HBoxCentral" type="HBoxContainer" parent="VBoxMenu"]
@@ -155,7 +156,7 @@ theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_g0byh")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 64
 theme_override_styles/hover = SubResource("StyleBoxFlat_rkhdx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")

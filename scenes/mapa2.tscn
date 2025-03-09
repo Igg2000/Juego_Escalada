@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=4 uid="uid://j41omslraca8"]
+[gd_scene load_steps=15 format=4 uid="uid://j41omslraca8"]
 
 [ext_resource type="Script" path="res://scripts/fondoMapa2.gd" id="1_6jvbd"]
 [ext_resource type="Texture2D" uid="uid://bo3ulrenpyew" path="res://assets/background/map2.png" id="2_uud5k"]
 [ext_resource type="PackedScene" uid="uid://bofke32sctxnq" path="res://scenes/jugador.tscn" id="3_3y4np"]
 [ext_resource type="Texture2D" uid="uid://do12vxn86u5od" path="res://assets/tilemap/map_2.png" id="4_na6te"]
+[ext_resource type="Script" path="res://scripts/label.gd" id="5_6iwat"]
 [ext_resource type="PackedScene" uid="uid://demgjsxt28kw7" path="res://scenes/rock.tscn" id="6_0ws4l"]
+[ext_resource type="Script" path="res://scripts/area_2d.gd" id="6_a3e4m"]
+[ext_resource type="Texture2D" uid="uid://ces7g40ppq4xu" path="res://assets/background/OIG1-Photoroom.png" id="6_u48ok"]
+[ext_resource type="Script" path="res://scripts/salto.gd" id="8_rgx8d"]
+[ext_resource type="AudioStream" uid="uid://dkrl3o17uitoe" path="res://assets/musica/Monkey - Sound Effect.mp3" id="9_kxodj"]
+[ext_resource type="AudioStream" uid="uid://bqju1fwxjp00e" path="res://assets/musica/Jungle Monkeys.mp3" id="11_p3hwq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48k6w"]
 texture = ExtResource("4_na6te")
@@ -517,6 +523,9 @@ texture = ExtResource("4_na6te")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_48k6w")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe0rr"]
+size = Vector2(406, 4452)
+
 [node name="mapa2" type="Node2D"]
 
 [node name="fondo" type="ParallaxBackground" parent="."]
@@ -527,79 +536,61 @@ motion_mirroring = Vector2(0, 648)
 
 [node name="Map2" type="Sprite2D" parent="fondo/ParallaxLayer"]
 texture_repeat = 2
+position = Vector2(-376, 4)
 texture = ExtResource("2_uud5k")
 centered = false
 region_enabled = true
-region_rect = Rect2(0, 0, 1152, 648)
+region_rect = Rect2(0, 0, 1920, 1080)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAaACIAAAAGAAoAAAAaACMAAAAGAAsAAAAbACIAAAAHAAoAAAAbACMAAAAHAAsAAAAcACIAAAAIAAoAAAAcACMAAAAIAAsAAAAdACIAAAAJAAoAAAAdACMAAAAJAAsAAAAeACIAAAAKAAoAAAAeACMAAAAKAAsAAAAfACIAAAALAAoAAAAfACMAAAALAAsAAAAgACIAAAAMAAoAAAAgACMAAAAMAAsAAAAhACIAAAANAAoAAAAhACMAAAANAAsAAAAiACIAAAAOAAoAAAAiACMAAAAOAAsAAAAjACIAAAAPAAoAAAAjACMAAAAPAAsAAAAkACIAAAAQAAoAAAAkACMAAAAQAAsAAAAlACIAAAARAAoAAAAlACMAAAARAAsAAAAmACIAAAASAAoAAAAmACMAAAASAAsAAAAnACIAAAATAAoAAAAnACMAAAATAAsAAAAoACIAAAAUAAoAAAAoACMAAAAUAAsAAAApACIAAAAVAAoAAAApACMAAAAVAAsAAAAqACIAAAAWAAoAAAAqACMAAAAWAAsAAAArACIAAAAXAAoAAAArACMAAAAXAAsAAAAsACIAAAAYAAoAAAAsACMAAAAYAAsAAAAtACIAAAAZAAoAAAAtACMAAAAZAAsAAAA=")
 tile_set = SubResource("TileSet_vy0mw")
-
-[node name="contenedorRocas" type="Node2D" parent="."]
-
-[node name="Rock" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(504, 326)
-
-[node name="Rock2" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(653, 326)
-
-[node name="Rock3" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(420, 266)
-
-[node name="Rock4" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(587, 266)
-
-[node name="Rock5" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(728, 266)
-
-[node name="Rock6" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(331, 201)
-
-[node name="Rock7" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(504, 201)
-
-[node name="Rock8" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(653, 201)
-
-[node name="Rock9" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(810, 201)
-
-[node name="Rock10" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(254, 130)
-
-[node name="Rock11" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(420, 130)
-
-[node name="Rock12" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(587, 130)
-
-[node name="Rock13" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(728, 130)
-
-[node name="Rock14" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(889, 130)
-
-[node name="Rock15" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(982, 57)
-
-[node name="Rock16" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(811, 57)
-
-[node name="Rock17" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(653, 57)
-
-[node name="Rock18" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(508, 57)
-
-[node name="Rock19" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(328, 54)
-
-[node name="Rock20" parent="contenedorRocas" instance=ExtResource("6_0ws4l")]
-position = Vector2(191, 56)
 
 [node name="Jugador" parent="." instance=ExtResource("3_3y4np")]
 position = Vector2(577, 415)
 
 [node name="Camera2D" type="Camera2D" parent="Jugador"]
 zoom = Vector2(1.5, 1.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+offset_right = 214.0
+offset_bottom = 126.0
+script = ExtResource("5_6iwat")
+player = NodePath("../../Jugador")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(92, 992)
+scale = Vector2(0.148437, 0.137695)
+texture = ExtResource("6_u48ok")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(589, 851)
+
+[node name="Area2D" type="Area2D" parent="Node2D"]
+position = Vector2(-311, -560)
+script = ExtResource("6_a3e4m")
+rock_scene = ExtResource("6_0ws4l")
+number_of_rocks = 200
+min_distance = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+position = Vector2(116, -2335)
+shape = SubResource("RectangleShape2D_xe0rr")
+disabled = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D"]
+stream = ExtResource("9_kxodj")
+
+[node name="Salto" type="Node2D" parent="." node_paths=PackedStringArray("player", "indicator", "jump_sound")]
+script = ExtResource("8_rgx8d")
+player = NodePath("../Jugador")
+jump_force = -350.0
+cooldown = 15.0
+indicator = NodePath("../CanvasLayer/Sprite2D")
+jump_sound = NodePath("../Node2D/AudioStreamPlayer2D")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_p3hwq")
+autoplay = true

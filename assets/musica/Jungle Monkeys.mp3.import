@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqju1fwxjp00e"
+path="res://.godot/imported/Jungle Monkeys.mp3-6d72ab366490cc4ac0b8c93a19b07be7.mp3str"
+
+[deps]
+
+source_file="res://assets/musica/Jungle Monkeys.mp3"
+dest_files=["res://.godot/imported/Jungle Monkeys.mp3-6d72ab366490cc4ac0b8c93a19b07be7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

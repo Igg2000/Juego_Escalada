@@ -17,7 +17,7 @@ func start_scroll_animation():
 	var duration = (text_height - visible_height) / scroll_speed
 	
 	# Anima la barra de desplazamiento
-	tween.tween_property(v_scroll, "value", text_height, duration)
+	tween.tween_property(v_scroll, "value", text_height, duration-3)
 	tween.connect("finished", self._on_tween_finished)  # Conecta la señal para reiniciar
 
 func _on_tween_finished():
@@ -25,7 +25,7 @@ func _on_tween_finished():
 	var v_scroll = get_v_scroll_bar()
 	v_scroll.value = 0  # Vuelve al inicio
 	start_scroll_animation()  # Inicia la animación de nuevo
-	boton_volver.show() #Hace visible el boton
+	boton_volver.disabled = false
 	
 
 

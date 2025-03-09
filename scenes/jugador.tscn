@@ -140,9 +140,9 @@ script = ExtResource("1_ibhag")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.0552, -52.5268)
-rotation = 0.0405185
-scale = Vector2(0.349743, 0.349743)
+position = Vector2(73.0614, -52.5255)
+rotation = 0.0402717
+scale = Vector2(0.349744, 0.349744)
 sprite_frames = SubResource("SpriteFrames_gelso")
 animation = &"agarre"
 frame_progress = 0.241292
@@ -176,9 +176,9 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.1418, -57.5357)
-rotation = 0.00949013
-scale = Vector2(0.350074, 0.350074)
+position = Vector2(-70.1379, -57.5364)
+rotation = 0.009295
+scale = Vector2(0.350066, 0.350066)
 sprite_frames = SubResource("SpriteFrames_nb7of")
 animation = &"agarre"
 frame_progress = 0.508256
@@ -213,14 +213,14 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2179, -14.7179)
-rotation = 1.49715
+position = Vector2(44.235, -14.7113)
+rotation = 1.49703
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.85, -18.2014)
-rotation = -1.50392
+position = Vector2(-40.8326, -18.1967)
+rotation = -1.50377
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 

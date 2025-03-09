@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cgu53i6dhcs1a"]
+[gd_scene load_steps=17 format=3 uid="uid://cgu53i6dhcs1a"]
 
 [ext_resource type="Texture2D" uid="uid://bnt4qkf8g3hd0" path="res://assets/creditos/background1.png" id="1_g0l0b"]
 [ext_resource type="Texture2D" uid="uid://cefi8j60twmfy" path="res://assets/creditos/background2.png" id="2_coww8"]
@@ -8,10 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://cmwekyxpdwcgb" path="res://assets/creditos/cloud6.png" id="6_1spb2"]
 [ext_resource type="Texture2D" uid="uid://cft2hikip4qm1" path="res://assets/creditos/cloud2.png" id="6_k862b"]
 [ext_resource type="Texture2D" uid="uid://l736rs408vb6" path="res://assets/creditos/cloud3.png" id="7_rfayn"]
+[ext_resource type="Texture2D" uid="uid://dtfp8qglxlfcc" path="res://assets/creditos/cloud8.png" id="8_ko16b"]
 [ext_resource type="Texture2D" uid="uid://dforflfyr63xc" path="res://assets/creditos/cloud4.png" id="9_hgqn4"]
 [ext_resource type="Texture2D" uid="uid://bhjbkt2ou650y" path="res://assets/creditos/cloud5.png" id="10_g20b3"]
 [ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="11_c8rkg"]
 [ext_resource type="Script" path="res://scripts/creditos.gd" id="12_17ey4"]
+[ext_resource type="Texture2D" uid="uid://cbe1f261306i2" path="res://assets/creditos/cloud7.png" id="12_dedqd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox0c1"]
 bg_color = Color(0.666569, 0.666569, 0.666569, 1)
@@ -83,37 +85,50 @@ script = ExtResource("4_1urd7")
 [node name="CapaNubesPequeñas" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 1
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(1000, 0)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="Cloud1" type="Sprite2D" parent="ParallaxBackground/CapaNubesPequeñas"]
-position = Vector2(433, 249)
+position = Vector2(144, 446)
+texture = ExtResource("4_h3mt6")
+centered = false
+
+[node name="Cloud2" type="Sprite2D" parent="ParallaxBackground/CapaNubesPequeñas"]
+position = Vector2(1147, 185)
 texture = ExtResource("4_h3mt6")
 centered = false
 
 [node name="Cloud6" type="Sprite2D" parent="ParallaxBackground/CapaNubesPequeñas"]
-position = Vector2(612, 169)
+position = Vector2(507, 312)
 texture = ExtResource("6_1spb2")
 
 [node name="Cloud3" type="Sprite2D" parent="ParallaxBackground/CapaNubesPequeñas"]
-position = Vector2(187, 27)
+position = Vector2(167, 41)
 texture = ExtResource("7_rfayn")
+
+[node name="Cloud8" type="Sprite2D" parent="ParallaxBackground/CapaNubesPequeñas"]
+position = Vector2(1569, 423)
+texture = ExtResource("8_ko16b")
 
 [node name="CapaNubesGrandes" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = 1
 motion_scale = Vector2(0.25, 0.25)
-motion_mirroring = Vector2(1000, 0)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="Cloud2" type="Sprite2D" parent="ParallaxBackground/CapaNubesGrandes"]
-position = Vector2(342, 121)
+position = Vector2(674, 115)
 texture = ExtResource("6_k862b")
 
 [node name="Cloud4" type="Sprite2D" parent="ParallaxBackground/CapaNubesGrandes"]
-position = Vector2(894, 222)
+position = Vector2(1649, 270)
 texture = ExtResource("9_hgqn4")
 
 [node name="Cloud5" type="Sprite2D" parent="ParallaxBackground/CapaNubesGrandes"]
-position = Vector2(1076, 94)
+position = Vector2(1599, 94)
 texture = ExtResource("10_g20b3")
+
+[node name="Cloud7" type="Sprite2D" parent="ParallaxBackground/CapaNubesGrandes"]
+position = Vector2(952, 367)
+texture = ExtResource("12_dedqd")
 
 [node name="OscurecerFondo" type="ColorRect" parent="."]
 visible = false
@@ -130,7 +145,7 @@ color = Color(0, 0, 0, 0.156863)
 
 [node name="Creditos" type="RichTextLabel" parent="CanvasLayer"]
 z_index = 2
-custom_minimum_size = Vector2(500, 100)
+custom_minimum_size = Vector2(1000, 100)
 anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
@@ -139,12 +154,13 @@ offset_left = -0.5
 offset_right = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 theme_override_colors/default_color = Color(0.943823, 0.481705, 7.70092e-07, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.411765)
 theme_override_fonts/normal_font = ExtResource("11_c8rkg")
 theme_override_fonts/bold_font = ExtResource("11_c8rkg")
-theme_override_font_sizes/normal_font_size = 22
-theme_override_font_sizes/bold_font_size = 36
+theme_override_font_sizes/normal_font_size = 42
+theme_override_font_sizes/bold_font_size = 54
 bbcode_enabled = true
 text = "
 
@@ -167,11 +183,7 @@ text = "
 
 
 
-
-
-
-
-[center][font_size=56][b][color=white]Jota the Climber[/color][/b][/font_size][/center]
+[center][font_size=86][b][color=white]Jota the Climber[/color][/b][/font_size][/center]
 
 
 
@@ -223,22 +235,21 @@ text = "
 
 
 
-
-
 "
 scroll_active = false
 script = ExtResource("12_17ey4")
 scroll_speed = 40.0
 
 [node name="VolverAlMenu" type="Button" parent="."]
-visible = false
-offset_left = 24.0
-offset_top = 587.0
-offset_right = 269.0
-offset_bottom = 634.0
+layout_mode = 0
+offset_left = 43.0
+offset_top = 1009.0
+offset_right = 288.0
+offset_bottom = 1056.0
 scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -247,6 +258,7 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_ox0c1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ox0c1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qjtf7")
+disabled = true
 text = "Volver al Menu"
 
 [connection signal="pressed" from="VolverAlMenu" to="CanvasLayer/Creditos" method="_on_volver_al_menu_pressed"]

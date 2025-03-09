@@ -11,5 +11,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	scroll_offset.x -= delta * scroll_speed
 	
-	if scroll_offset.x <= -4000:
+	if scroll_offset.x <= -8000:
 		scroll_offset.x = 0
