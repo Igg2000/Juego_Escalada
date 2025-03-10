@@ -59,7 +59,7 @@ func _cargar_record():
 	if cargar_partida != null:
 		record_maximo = cargar_partida.get_32()
 	else:
-		record_maximo = tiempo_del_nivel
+		record_maximo = int(tiempo_del_nivel)
 		_guardar_record()
 	
 	

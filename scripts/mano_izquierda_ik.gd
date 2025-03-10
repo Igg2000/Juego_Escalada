@@ -99,7 +99,7 @@ func set_can_move(mover):
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Rock"):
 		can_grab = true
-	elif area.is_in_group("Meta"):
+	elif area.is_in_group("Meta") or area.get_parent().is_in_group("Meta"):
 		meta_tocada.emit()
 		
 
