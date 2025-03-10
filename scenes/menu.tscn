@@ -885,7 +885,7 @@ position = Vector2(1157, 876)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_04qdn")
 autoplay = "default"
-frame_progress = 0.115875
+frame_progress = 0.123891
 speed_scale = 0.5
 
 [node name="AnimalitosSuelo" type="Node2D" parent="."]
@@ -896,7 +896,7 @@ position = Vector2(563, 849)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_jvooa")
 autoplay = "default"
-frame_progress = 0.643931
+frame_progress = 0.121831
 
 [node name="pandaMirandoAtras" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
 texture_filter = 1
@@ -904,7 +904,7 @@ position = Vector2(1396, 944)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_q36q7")
 autoplay = "default"
-frame_progress = 0.421918
+frame_progress = 0.899819
 
 [node name="pandaDormido" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
 texture_filter = 1
@@ -912,7 +912,7 @@ position = Vector2(1759, 870)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_xyeak")
 autoplay = "default"
-frame_progress = 0.263876
+frame_progress = 0.741777
 
 [node name="pandaAsustado" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
 texture_filter = 1
@@ -920,7 +920,7 @@ position = Vector2(994, 966)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_miuib")
 autoplay = "default"
-frame_progress = 0.432745
+frame_progress = 0.177585
 
 [node name="pajaroChiquito" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
 texture_filter = 1
@@ -928,7 +928,7 @@ position = Vector2(501, 975)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_v58ut")
 autoplay = "default"
-frame_progress = 0.934084
+frame_progress = 0.0229027
 
 [node name="pajaroChiquito2" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
 texture_filter = 1
@@ -962,7 +962,7 @@ position = Vector2(732, 982)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_48cpm")
 autoplay = "default"
-frame_progress = 0.420634
+frame_progress = 0.898535
 
 [node name="conejoGris" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
 texture_filter = 1
@@ -970,7 +970,7 @@ position = Vector2(1463, 890)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_2kgt0")
 autoplay = "default"
-frame_progress = 0.471777
+frame_progress = 0.949678
 flip_h = true
 
 [node name="conejoBlanco" type="AnimatedSprite2D" parent="AnimalitosSuelo"]
@@ -979,7 +979,7 @@ position = Vector2(811, 881)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_vor2o")
 autoplay = "default"
-frame_progress = 0.0126902
+frame_progress = 0.49059
 
 [node name="Pajaros" type="Node2D" parent="."]
 
