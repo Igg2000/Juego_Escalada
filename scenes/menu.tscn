@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl2qa3pt810kw"]
+[gd_scene load_steps=10 format=3 uid="uid://bl2qa3pt810kw"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_tdlpm"]
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="2_og4ma"]
 [ext_resource type="Texture2D" uid="uid://y2mydyqhak04" path="res://icon.svg" id="3_0sdb0"]
 [ext_resource type="FontFile" uid="uid://fvs7kwp0ilom" path="res://fonts/Xolonium-Regular.ttf" id="3_g0byh"]
 [ext_resource type="Script" path="res://scenes/logo_menu.gd" id="4_irebo"]
+[ext_resource type="FontFile" uid="uid://ypvjhmyu1u6d" path="res://fonts/Game Bubble.ttf" id="6_76v1q"]
+[ext_resource type="AudioStream" uid="uid://xktvc1p2ry6w" path="res://assets/musica/16-bits-musica-294099.mp3" id="7_qo235"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rkhdx"]
 bg_color = Color(0.666569, 0.666569, 0.666569, 1)
@@ -95,36 +97,30 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxMenu" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
+offset_left = 96.0
+offset_top = -420.0
+offset_right = 1179.0
+offset_bottom = 269.0
 grow_vertical = 2
 size_flags_horizontal = 4
-alignment = 1
+theme_override_constants/separation = 50
 
 [node name="NombreJuego" type="Label" parent="VBoxMenu"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 size_flags_vertical = 10
 theme_override_colors/font_color = Color(0.62898, 0.836482, 0.362608, 1)
-theme_override_fonts/font = ExtResource("3_g0byh")
+theme_override_fonts/font = ExtResource("6_76v1q")
 theme_override_font_sizes/font_size = 128
-text = "Jota the Climber"
+text = "Jota 
+    the Climber"
 
-[node name="HBoxCentral" type="HBoxContainer" parent="VBoxMenu"]
+[node name="TiempoButton" type="Button" parent="VBoxMenu"]
 layout_mode = 2
-size_flags_vertical = 6
-
-[node name="TiempoButton" type="Button" parent="VBoxMenu/HBoxCentral"]
-layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -135,9 +131,9 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
 text = "Tiempo"
 
-[node name="AlturaButton" type="Button" parent="VBoxMenu/HBoxCentral"]
+[node name="AlturaButton" type="Button" parent="VBoxMenu"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 0
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -150,7 +146,7 @@ text = "Altura"
 
 [node name="CreadoresButton" type="Button" parent="VBoxMenu"]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 0
 size_flags_vertical = 6
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -162,6 +158,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
 text = "Creadores"
 
-[connection signal="pressed" from="VBoxMenu/HBoxCentral/TiempoButton" to="." method="_on_tiempo_button_pressed"]
-[connection signal="pressed" from="VBoxMenu/HBoxCentral/AlturaButton" to="." method="_on_altura_button_pressed"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_qo235")
+volume_db = 4.0
+autoplay = true
+
+[connection signal="pressed" from="VBoxMenu/TiempoButton" to="." method="_on_tiempo_button_pressed"]
+[connection signal="pressed" from="VBoxMenu/AlturaButton" to="." method="_on_altura_button_pressed"]
 [connection signal="pressed" from="VBoxMenu/CreadoresButton" to="." method="_on_creadores_button_pressed"]

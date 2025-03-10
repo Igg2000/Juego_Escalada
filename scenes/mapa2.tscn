@@ -582,12 +582,6 @@ region_rect = Rect2(0, 0, 1920, 1080)
 tile_map_data = PackedByteArray("AAAaACIAAAAGAAoAAAAaACMAAAAGAAsAAAAbACIAAAAHAAoAAAAbACMAAAAHAAsAAAAcACIAAAAIAAoAAAAcACMAAAAIAAsAAAAdACIAAAAJAAoAAAAdACMAAAAJAAsAAAAeACIAAAAKAAoAAAAeACMAAAAKAAsAAAAfACIAAAALAAoAAAAfACMAAAALAAsAAAAgACIAAAAMAAoAAAAgACMAAAAMAAsAAAAhACIAAAANAAoAAAAhACMAAAANAAsAAAAiACIAAAAOAAoAAAAiACMAAAAOAAsAAAAjACIAAAAPAAoAAAAjACMAAAAPAAsAAAAkACIAAAAQAAoAAAAkACMAAAAQAAsAAAAlACIAAAARAAoAAAAlACMAAAARAAsAAAAmACIAAAASAAoAAAAmACMAAAASAAsAAAAnACIAAAATAAoAAAAnACMAAAATAAsAAAAoACIAAAAUAAoAAAAoACMAAAAUAAsAAAApACIAAAAVAAoAAAApACMAAAAVAAsAAAAqACIAAAAWAAoAAAAqACMAAAAWAAsAAAArACIAAAAXAAoAAAArACMAAAAXAAsAAAAsACIAAAAYAAoAAAAsACMAAAAYAAsAAAAtACIAAAAZAAoAAAAtACMAAAAZAAsAAAA=")
 tile_set = SubResource("TileSet_vy0mw")
 
-[node name="Jugador" parent="." instance=ExtResource("3_3y4np")]
-position = Vector2(577, 421)
-
-[node name="Camera2D" type="Camera2D" parent="Jugador"]
-zoom = Vector2(1.5, 1.5)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Label" type="Label" parent="CanvasLayer" node_paths=PackedStringArray("player")]
@@ -618,6 +612,12 @@ disabled = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D"]
 stream = ExtResource("9_kxodj")
+
+[node name="Jugador" parent="." instance=ExtResource("3_3y4np")]
+position = Vector2(577, 421)
+
+[node name="Camera2D" type="Camera2D" parent="Jugador"]
+zoom = Vector2(1.5, 1.5)
 
 [node name="Salto" type="Node2D" parent="." node_paths=PackedStringArray("player", "indicator", "jump_sound")]
 script = ExtResource("8_rgx8d")
