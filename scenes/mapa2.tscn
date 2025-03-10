@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://j41omslraca8"]
+[gd_scene load_steps=22 format=4 uid="uid://j41omslraca8"]
 
 [ext_resource type="Script" path="res://scripts/mapa_2.gd" id="1_2b6k2"]
 [ext_resource type="Script" path="res://scripts/fondoMapa2.gd" id="1_6jvbd"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://demgjsxt28kw7" path="res://scenes/rock.tscn" id="6_0ws4l"]
 [ext_resource type="Script" path="res://scripts/area_2d.gd" id="6_a3e4m"]
 [ext_resource type="Texture2D" uid="uid://ces7g40ppq4xu" path="res://assets/background/OIG1-Photoroom.png" id="6_u48ok"]
+[ext_resource type="Texture2D" uid="uid://cypngardd1b0i" path="res://assets/menu/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/boton_casa.png" id="7_th41w"]
 [ext_resource type="Script" path="res://scripts/salto.gd" id="8_rgx8d"]
 [ext_resource type="AudioStream" uid="uid://dkrl3o17uitoe" path="res://assets/musica/Monkey - Sound Effect.mp3" id="9_kxodj"]
 [ext_resource type="AudioStream" uid="uid://bqju1fwxjp00e" path="res://assets/musica/Jungle Monkeys.mp3" id="11_p3hwq"]
@@ -595,6 +596,22 @@ position = Vector2(92, 992)
 scale = Vector2(0.148437, 0.137695)
 texture = ExtResource("6_u48ok")
 
+[node name="Button" type="Button" parent="CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 9.0
+offset_right = -71.0
+offset_bottom = 49.0
+grow_horizontal = 0
+scale = Vector2(2.49716, 2.3266)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+icon = ExtResource("7_th41w")
+
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(589, 851)
 
@@ -760,5 +777,6 @@ text = "Volver"
 metadata/_edit_use_anchors_ = true
 
 [connection signal="ha_perdido" from="CanvasLayer/Label" to="." method="_on_label_ha_perdido"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PantallaGameOver/repetir" to="." method="_on_repetir_pressed"]
 [connection signal="pressed" from="PantallaGameOver/volver" to="." method="_on_volver_pressed"]

@@ -95,3 +95,7 @@ func relojCambiaDeColor():
 		else:
 			reloj.texture_progress = textura_reloj_2
 			imagenReloj=2
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

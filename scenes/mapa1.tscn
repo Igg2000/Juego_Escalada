@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bbjq4m3pe641"]
+[gd_scene load_steps=36 format=3 uid="uid://bbjq4m3pe641"]
 
 [ext_resource type="Texture2D" uid="uid://b3xhsasxf387n" path="res://assets/background/background.png" id="1_b1n0p"]
 [ext_resource type="Script" path="res://scripts/mapa_1.gd" id="1_l8ao4"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dlg6bcxesh2tt" path="res://assets/tilemap/meta.png" id="3_oj8gc"]
 [ext_resource type="PackedScene" uid="uid://demgjsxt28kw7" path="res://scenes/rock.tscn" id="4_aa7cn"]
 [ext_resource type="Texture2D" uid="uid://bboh3ann7f2ei" path="res://assets/background/crosswalk_pale.png" id="4_drdog"]
+[ext_resource type="Texture2D" uid="uid://cypngardd1b0i" path="res://assets/menu/Complete_UI_Essential_Pack_Free/01_Flat_Theme/Sprites/boton_casa.png" id="6_g3hwd"]
 [ext_resource type="PackedScene" uid="uid://cyxelpg8633hf" path="res://scenes/car.tscn" id="10_6cllo"]
 [ext_resource type="Script" path="res://scenes/car_spawner.gd" id="10_74f4v"]
 [ext_resource type="Texture2D" uid="uid://ceqdqo7uyq4uh" path="res://assets/menu/GUI.png" id="12_6u0my"]
@@ -3805,6 +3806,22 @@ fill_mode = 3
 texture_under = ExtResource("14_ai5ty")
 texture_progress = ExtResource("15_lxw7n")
 
+[node name="Button" type="Button" parent="Timer/CanvasLayer"]
+texture_filter = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 9.0
+offset_right = -71.0
+offset_bottom = 49.0
+grow_horizontal = 0
+scale = Vector2(2.49716, 2.3266)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+icon = ExtResource("6_g3hwd")
+
 [node name="PantallaVictoria" type="CanvasLayer" parent="."]
 visible = false
 
@@ -4035,6 +4052,7 @@ parameters/looping = true
 
 [connection signal="ha_llegado_a_meta" from="Jugador" to="." method="_on_jugador_ha_llegado_a_meta"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Timer/CanvasLayer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="PantallaVictoria/repetir" to="." method="_on_repetir_pressed"]
 [connection signal="pressed" from="PantallaVictoria/volver" to="." method="_on_volver_pressed"]
 [connection signal="pressed" from="PantallaDerrota/repetir" to="." method="_on_repetir_pressed"]
