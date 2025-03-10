@@ -3,7 +3,7 @@ extends Node2D
 @onready var timer: Timer = $Timer
 @onready var reloj: TextureProgressBar = $Timer/CanvasLayer/RelojDeArena
 @onready var tiempo: RichTextLabel = $Timer/CanvasLayer/tiempo
-@export var tiempo_del_nivel: int = 60
+@export var tiempo_del_nivel: int = 120
 var record_actual: int  = 0
 var record_maximo: int
 
@@ -59,7 +59,7 @@ func _cargar_record():
 	if cargar_partida != null:
 		record_maximo = cargar_partida.get_32()
 	else:
-		record_maximo = int(tiempo_del_nivel)
+		record_maximo = 120
 		_guardar_record()
 	
 	

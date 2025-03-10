@@ -53,14 +53,14 @@ func _process(delta):
 		var direction = Vector2.ZERO
 
 		# Controles con WASD
-		if Input.is_key_pressed(KEY_W):
+		if Input.is_action_pressed("W"):
 			direction.y -= 1
-		elif Input.is_key_pressed(KEY_S):
+		elif Input.is_action_pressed("S"):
 			direction.y += 1
 
-		if Input.is_key_pressed(KEY_A):
+		if Input.is_action_pressed("A"):
 			direction.x -= 1
-		elif Input.is_key_pressed(KEY_D):
+		elif Input.is_action_pressed("D"):
 			direction.x += 1
 			
 		if Input.is_action_pressed("agarre_izquierdo") && can_grab:

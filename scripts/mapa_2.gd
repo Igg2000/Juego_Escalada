@@ -54,7 +54,7 @@ func _on_label_ha_perdido(a:int) -> void:
 	
 
 func _on_repetir_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/mapa1.tscn")
+	get_tree().change_scene_to_file("res://scenes/mapa2.tscn")
 
 
 func _on_volver_pressed() -> void:
