@@ -258,7 +258,6 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/hover = SubResource("StyleBoxFlat_ox0c1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ox0c1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qjtf7")
-disabled = true
 text = "Volver al Menu"
 
 [connection signal="pressed" from="VolverAlMenu" to="CanvasLayer/Creditos" method="_on_volver_al_menu_pressed"]

@@ -16,3 +16,7 @@ func _on_altura_button_pressed() -> void:
 
 func _on_creadores_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/creditos.tscn")
+
+
+func _on_salir_button_pressed() -> void:
+	get_tree().quit()

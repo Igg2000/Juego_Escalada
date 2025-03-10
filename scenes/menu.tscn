@@ -158,6 +158,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
 text = "Creadores"
 
+[node name="SalirButton" type="Button" parent="VBoxMenu"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 6
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_g0byh")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/hover = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rkhdx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p63qc")
+text = "Salir"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_qo235")
 volume_db = 4.0
@@ -166,3 +180,4 @@ autoplay = true
 [connection signal="pressed" from="VBoxMenu/TiempoButton" to="." method="_on_tiempo_button_pressed"]
 [connection signal="pressed" from="VBoxMenu/AlturaButton" to="." method="_on_altura_button_pressed"]
 [connection signal="pressed" from="VBoxMenu/CreadoresButton" to="." method="_on_creadores_button_pressed"]
+[connection signal="pressed" from="VBoxMenu/SalirButton" to="." method="_on_salir_button_pressed"]
