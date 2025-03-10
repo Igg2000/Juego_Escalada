@@ -647,6 +647,7 @@ jump_sound = NodePath("../Node2D/AudioStreamPlayer2D")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_p3hwq")
 autoplay = true
+parameters/looping = false
 
 [node name="PantallaGameOver" type="CanvasLayer" parent="."]
 visible = false

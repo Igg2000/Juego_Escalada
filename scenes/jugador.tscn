@@ -140,8 +140,8 @@ script = ExtResource("1_ibhag")
 [node name="base" type="Node2D" parent="."]
 
 [node name="AntebrazoDc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoDc"]]
-position = Vector2(73.0598, -52.5257)
-rotation = 0.040335
+position = Vector2(73.0605, -52.5256)
+rotation = 0.0403058
 scale = Vector2(0.349745, 0.349745)
 sprite_frames = SubResource("SpriteFrames_gelso")
 animation = &"agarre"
@@ -176,9 +176,9 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="AntebrazoIc" type="AnimatedSprite2D" parent="base" groups=["AntebrazoIc"]]
-position = Vector2(-70.1383, -57.5359)
-rotation = 0.00931476
-scale = Vector2(0.350073, 0.350073)
+position = Vector2(-70.138, -57.5361)
+rotation = 0.00930215
+scale = Vector2(0.35007, 0.35007)
 sprite_frames = SubResource("SpriteFrames_nb7of")
 animation = &"agarre"
 frame_progress = 0.508256
@@ -213,14 +213,14 @@ texture_under = ExtResource("7_0s7uk")
 texture_progress = ExtResource("8_6fdue")
 
 [node name="BrazoD" type="Sprite2D" parent="base"]
-position = Vector2(44.2304, -14.713)
-rotation = 1.49708
+position = Vector2(44.232, -14.7124)
+rotation = 1.49706
 scale = Vector2(0.349945, 0.349945)
 texture = ExtResource("3_5343f")
 
 [node name="BrazoI" type="Sprite2D" parent="base"]
-position = Vector2(-40.8373, -18.1969)
-rotation = -1.50381
+position = Vector2(-40.8356, -18.1964)
+rotation = -1.50378
 scale = Vector2(0.349953, 0.349953)
 texture = ExtResource("4_l3mph")
 
@@ -360,6 +360,7 @@ position = Vector2(77.9775, -77.5421)
 script = ExtResource("2_2j5uy")
 
 [node name="Sprite2D" type="Sprite2D" parent="IK/manoDerechaIK"]
+visible = false
 position = Vector2(0.0224972, -0.457904)
 scale = Vector2(0.00413865, 0.00419447)
 texture = ExtResource("10_msfkd")
@@ -369,6 +370,7 @@ position = Vector2(-71.0225, -77.5421)
 script = ExtResource("3_swlmf")
 
 [node name="Sprite2D" type="Sprite2D" parent="IK/manoIzquierdaIK"]
+visible = false
 position = Vector2(0.0224972, -0.457904)
 scale = Vector2(0.00413865, 0.00419447)
 texture = ExtResource("10_msfkd")
